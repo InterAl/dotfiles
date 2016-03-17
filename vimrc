@@ -22,6 +22,10 @@ Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'ervandew/supertab'
 Plugin 'ZoomWin'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 
 call vundle#end()
 filetype plugin indent on    " required
@@ -89,6 +93,11 @@ command! WQ wq<bang>
 
 "Syntastic
 let g:syntastic_javascript_checkers = ['eslint']
+
+"Syntastic
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['javascript.jsx'] = 'javascript.jsx,html'
 
 " air-line
 let g:airline#extensions#tabline#enabled = 1
