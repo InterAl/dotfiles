@@ -19,6 +19,9 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'surround.vim'
 Plugin 'szw/vim-tags'
 Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'ervandew/supertab'
+Plugin 'ZoomWin'
 
 call vundle#end()
 filetype plugin indent on    " required
@@ -26,9 +29,11 @@ filetype plugin indent on    " required
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 set encoding=utf-8
-""syntax on
+syntax on
 set rnu
 let mapleader=" "
+set textwidth=100
+set colorcolumn=+1
 
 "colors
 colorscheme molokai
@@ -73,6 +78,17 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 " Show all open buffers and their status
 nmap <leader>bl :ls<CR>"
 
+"useful remappings
+command! W w
+command! Q q
+command! Q quit<bang>
+command! Qa qa<bang>
+command! WQ wq<bang>
+command! Wq wq<bang>
+command! WQ wq<bang>
+
+"Syntastic
+let g:syntastic_javascript_checkers = ['eslint']
 
 " air-line
 let g:airline#extensions#tabline#enabled = 1
