@@ -26,6 +26,8 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'mattn/emmet-vim'
 Plugin 'delimitMate.vim'
+Plugin 'moll/vim-node'
+Plugin 'rails.vim'
 "Plugin 'Tagbar'
 
 call vundle#end()
@@ -110,6 +112,10 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 
 "nerd-tree-tabs
 let g:nerdtree_tabs_open_on_console_startup = 1
+let NERDTreeIgnore=['node_modules']
+
+"Highlight in NERDTree the active buffer
+autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
 
 "******************************************************
                   "EasyMotion"
@@ -165,4 +171,4 @@ let g:airline_powerline_fonts = 1
  let g:airline_right_alt_sep = ''
  let g:airline_symbols.branch = ''
  let g:airline_symbols.readonly = ''
- let g:airline_symbols.linenr = ''"
+ let g:airline_symbols.linenr = ''
