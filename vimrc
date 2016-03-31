@@ -32,6 +32,7 @@ Plugin 'rails.vim'
 
 call vundle#end()
 filetype plugin indent on    " required
+filetype on
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -115,7 +116,7 @@ let g:nerdtree_tabs_open_on_console_startup = 1
 let NERDTreeIgnore=['node_modules']
 
 "Highlight in NERDTree the active buffer
-autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
+"autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
 
 "******************************************************
                   "EasyMotion"
