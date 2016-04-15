@@ -28,6 +28,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'delimitMate.vim'
 Plugin 'moll/vim-node'
 Plugin 'rails.vim'
+Plugin 'kshenoy/vim-signature'
 "Plugin 'Tagbar'
 
 call vundle#end()
@@ -40,7 +41,7 @@ set encoding=utf-8
 syntax on
 set rnu
 let mapleader=" "
-set textwidth=100
+set textwidth=80
 set colorcolumn=+1
 
 "colors
@@ -51,8 +52,8 @@ set cursorline
 
 "tabs
 set autoindent
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 
 "search
@@ -82,6 +83,13 @@ nmap <leader>tq :tabclose<CR>
 nmap <leader>r :source ~/.vim/vimrc<CR>
 nmap <leader>g :NERDTreeTabsFind<CR>
 
+nmap <C-S-f> :Ack<space>
+map <S-y> "*y
+nmap <leader>p "*p
+nmap <leader><S-p> "*<S-p>
+nmap <C-b> <C-]>
+nmap <C-s> :w<cr>
+
 if bufwinnr(1)
   map <Down> <C-W>+
   map <Up> <C-W>-
@@ -98,6 +106,9 @@ command! WQ wq<bang>
 command! Wq wq<bang>
 command! WQ wq<bang>
 
+"jsx
+let g:jsx_ext_required = 0
+
 "Syntastic
 let g:syntastic_javascript_checkers = ['eslint']
 
@@ -107,13 +118,17 @@ let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['javascript.jsx'] = 'javascript.jsx,html'
 
 "CtrlP
-let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode = 'rw'
+let g:ctrlp_root_markers = ['.ctrlp']
 "let g:ctrlp_extensions = ['tag']
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 
 "nerd-tree-tabs
 let g:nerdtree_tabs_open_on_console_startup = 1
 let NERDTreeIgnore=['node_modules']
+let g:NERDTreeChDirMode       = 2
+
+set backspace=2
 
 "Highlight in NERDTree the active buffer
 "autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
