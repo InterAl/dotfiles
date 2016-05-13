@@ -1,2 +1,3 @@
 --ignore-file=match:.bundle.js
 --ignore-file=is:tags
+--ignore-dir=coverage

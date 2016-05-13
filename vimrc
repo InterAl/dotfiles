@@ -30,6 +30,7 @@ Plugin 'moll/vim-node'
 Plugin 'rails.vim'
 Plugin 'kshenoy/vim-signature'
 Plugin 'digitaltoad/vim-jade'
+Plugin 'wincent/command-t'
 "Plugin 'Tagbar'
 
 call vundle#end()
@@ -123,6 +124,11 @@ let g:ctrlp_working_path_mode = 'rw'
 let g:ctrlp_root_markers = ['.ctrlp']
 "let g:ctrlp_extensions = ['tag']
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
+
+"CommandT
+map <C-n> :CommandT<cr>
+let g:CommandTWildIgnore=&wildignore . ',**/openrest-js/lib/*,**/openrest-js/coverage/*'
+let g:CommandTCancelMap='<esc>'
 
 "nerd-tree-tabs
 let g:nerdtree_tabs_open_on_console_startup = 1
