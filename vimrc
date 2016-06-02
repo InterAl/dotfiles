@@ -6,7 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'ctrlp.vim'
+" Plugin 'ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
@@ -15,8 +15,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'surround.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'ervandew/supertab'
-Plugin 'ZoomWin'
+" Plugin 'ervandew/supertab'
+" Plugin 'ZoomWin'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
@@ -27,10 +27,13 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'mattn/emmet-vim'
 Plugin 'delimitMate.vim'
 Plugin 'moll/vim-node'
-Plugin 'rails.vim'
+" Plugin 'rails.vim'
 Plugin 'kshenoy/vim-signature'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'wincent/command-t'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'tpope/vim-dispatch'
+Plugin 'henrik/vim-indexed-search'
 "Plugin 'Tagbar'
 
 call vundle#end()
@@ -107,6 +110,7 @@ command! Qa qa<bang>
 command! WQ wq<bang>
 command! Wq wq<bang>
 command! WQ wq<bang>
+nmap <F4> :let @* = expand("%:p")<CR>
 
 "jsx
 let g:jsx_ext_required = 0
@@ -115,20 +119,17 @@ let g:jsx_ext_required = 0
 let g:syntastic_javascript_checkers = ['eslint']
 
 "SnipMate
+imap <C-k> <Plug>snipMateNextOrTrigger
+smap <C-k> <Plug>snipMateNextOrTrigger
 let g:snipMate = get(g:, 'snipMate', {})
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['javascript.jsx'] = 'javascript.jsx,html'
 
-"CtrlP
-let g:ctrlp_working_path_mode = 'rw'
-let g:ctrlp_root_markers = ['.ctrlp']
-"let g:ctrlp_extensions = ['tag']
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
-
 "CommandT
 map <C-n> :CommandT<cr>
-let g:CommandTWildIgnore=&wildignore . ',**/openrest-js/lib/*,**/openrest-js/coverage/*'
+let g:CommandTWildIgnore=&wildignore . ',**/node_modules/*,**/openrest-js/lib/*,**/openrest-js/coverage/*'
 let g:CommandTCancelMap='<esc>'
+noremap <F5> :CommandTFlush<CR>
 
 "nerd-tree-tabs
 let g:nerdtree_tabs_open_on_console_startup = 1
@@ -136,6 +137,13 @@ let NERDTreeIgnore=['node_modules']
 let g:NERDTreeChDirMode       = 2
 
 set backspace=2
+
+"YouCompleteMe
+set shortmess+=c
+
+"vim-dispatch
+autocmd FileType javascript let b:dispatch = 'mocha --watch --compilers js:babel-register --require ignore-styles --require spec/jsdomSetup.js'
+nnoremap <F9> :Dispatch<CR>
 
 "Highlight in NERDTree the active buffer
 "autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
