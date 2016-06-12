@@ -94,6 +94,8 @@ nmap <leader>p "*p
 nmap <leader><S-p> "*<S-p>
 nmap <C-b> <C-]>
 nmap <C-s> :w<cr>
+nnoremap <C-v> "0P
+inoremap <C-v> <esc>"0pi
 
 if bufwinnr(1)
   map <Down> <C-W>+
