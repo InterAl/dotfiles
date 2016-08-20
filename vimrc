@@ -47,6 +47,7 @@ syntax on
 set rnu
 let mapleader=" "
 set textwidth=80
+set nowrap
 set colorcolumn=+1
 
 "colors
@@ -93,9 +94,7 @@ map <S-y> "*y
 nmap <leader>p "*p
 nmap <leader><S-p> "*<S-p>
 nmap <C-b> <C-]>
-nmap <C-s> :w<cr>
-nnoremap <C-v> "0P
-inoremap <C-v> <esc>"0pi
+nnoremap <S-k> "0P
 
 if bufwinnr(1)
   map <Down> <C-W>+
@@ -129,14 +128,13 @@ let g:snipMate.scope_aliases['javascript.jsx'] = 'javascript.jsx,html'
 
 "CommandT
 map <C-n> :CommandT<cr>
-let g:CommandTWildIgnore=&wildignore . ',**/node_modules/*,**/openrest-js/lib/*,**/openrest-js/coverage/*'
+let g:CommandTWildIgnore=&wildignore . ',**/node_modules/*,**/openrest-js/lib/*,**/openrest-js/coverage/*,**/restaurants-orders/coverage/*'
 let g:CommandTCancelMap='<esc>'
 noremap <F5> :CommandTFlush<CR>
 
 "nerd-tree-tabs
-let g:nerdtree_tabs_open_on_console_startup = 1
 let NERDTreeIgnore=['node_modules']
-let g:NERDTreeChDirMode       = 2
+let g:NERDTreeChDirMode = 2
 
 set backspace=2
 
