@@ -1,7 +1,9 @@
 --ignore-file=match:.bundle.js
+--ignore-file=match:.tsv
 --ignore-file=match:.jsbundle
 --ignore-file=is:tags
 --ignore-dir=coverage
 --ignore-dir=assets
 --ignore-dir=android
 --ignore-dir=ios
+--ignore-dir=dist

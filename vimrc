@@ -6,10 +6,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
-" Plugin 'ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mxw/vim-jsx'
-Plugin 'pangloss/vim-javascript'
+"Plugin 'pangloss/vim-javascript'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'surround.vim'
@@ -34,11 +33,12 @@ Plugin 'wincent/command-t'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-dispatch'
 Plugin 'henrik/vim-indexed-search'
-"Plugin 'Tagbar'
+Plugin 'Tagbar'
 
 call vundle#end()
 filetype plugin indent on    " required
 filetype on
+au BufNewFile,BufRead *.icss set filetype=css
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 set noswapfile
@@ -128,7 +128,7 @@ let g:snipMate.scope_aliases['javascript.jsx'] = 'javascript.jsx,html'
 
 "CommandT
 map <C-n> :CommandT<cr>
-let g:CommandTWildIgnore=&wildignore . ',**/node_modules/*,**/openrest-js/lib/*,**/openrest-js/coverage/*,**/restaurants-orders/coverage/*'
+let g:CommandTWildIgnore=&wildignore . ',**/node_modules/*,**/openrest-js/lib/*,**/openrest-js/coverage/*,**/restaurants-orders/coverage/*,**/build/*'
 let g:CommandTCancelMap='<esc>'
 noremap <F5> :CommandTFlush<CR>
 
@@ -140,6 +140,7 @@ set backspace=2
 
 "YouCompleteMe
 set shortmess+=c
+set completeopt-=preview
 
 "vim-dispatch
 autocmd FileType javascript let b:dispatch = 'mocha --watch --compilers js:babel-register --require ignore-styles --require spec/jsdomSetup.js'
