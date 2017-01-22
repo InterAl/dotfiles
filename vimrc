@@ -3,12 +3,13 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=/usr/local/opt/fzf
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mxw/vim-jsx'
-"Plugin 'pangloss/vim-javascript'
+Plugin 'pangloss/vim-javascript'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'surround.vim'
@@ -26,7 +27,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'mattn/emmet-vim'
 Plugin 'delimitMate.vim'
 Plugin 'moll/vim-node'
-" Plugin 'rails.vim'
+" " Plugin 'rails.vim'
 Plugin 'kshenoy/vim-signature'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'wincent/command-t'
@@ -113,6 +114,11 @@ command! Wq wq<bang>
 command! WQ wq<bang>
 nmap <F4> :let @* = expand("%:p")<CR>
 
+"snippets
+command! Lodash :normal iimport _ from 'lodash';<ESC>
+command! Class :normal iexport default class<ESC>
+command! React :normal iimport React, {Component} from 'react';<ESC>
+
 "jsx
 let g:jsx_ext_required = 0
 
@@ -127,8 +133,8 @@ let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['javascript.jsx'] = 'javascript.jsx,html'
 
 "CommandT
-map <C-n> :CommandT<cr>
-let g:CommandTWildIgnore=&wildignore . ',**/node_modules/*,**/openrest-js/lib/*,**/openrest-js/coverage/*,**/restaurants-orders/coverage/*,**/build/*'
+map <C-n> :FZF<cr>
+let g:CommandTWildIgnore=&wildignore . ',**/node_modules/*,**/openrest-js/lib/*,**/openrest-js/coverage/*,**/restaurants-orders/coverage/*,**/build/*,**/tmp/*'
 let g:CommandTCancelMap='<esc>'
 noremap <F5> :CommandTFlush<CR>
 

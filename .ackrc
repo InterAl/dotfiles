@@ -7,3 +7,4 @@
 --ignore-dir=android
 --ignore-dir=ios
 --ignore-dir=dist
+--ignore-dir=public
