@@ -16,6 +16,7 @@ bind -x '"\C-\e41": clear;'
 
 export ANDROID_HOME=/usr/local/opt/android-sdk
 PATH="~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:${PATH}"
+PATH="/Applications/Postgres.app/Contents/Versions/9.6/bin:${PATH}"
 export PATH
 
 getNpmVersion() {
