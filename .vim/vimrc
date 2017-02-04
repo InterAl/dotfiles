@@ -132,11 +132,9 @@ let g:snipMate = get(g:, 'snipMate', {})
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['javascript.jsx'] = 'javascript.jsx,html'
 
-"CommandT
+"fzf
 map <C-n> :FZF<cr>
-let g:CommandTWildIgnore=&wildignore . ',**/node_modules/*,**/openrest-js/lib/*,**/openrest-js/coverage/*,**/restaurants-orders/coverage/*,**/build/*,**/tmp/*'
-let g:CommandTCancelMap='<esc>'
-noremap <F5> :CommandTFlush<CR>
+let g:fzf_layout = { 'up': '60%' }
 
 "nerd-tree-tabs
 let NERDTreeIgnore=['node_modules']
