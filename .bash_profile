@@ -35,5 +35,6 @@ export REACT_EDITOR=vim
 
 alias sshresonators="ssh -i \"./r_admin.pem\" ubuntu@ec2-52-27-92-5.us-west-2.compute.amazonaws.com"
 alias runnodejs="sudo PORT=80 MENUS_KEY=c905d9c5-aa23-407e-aed7-80deef347664 ORDERS_KEY=8c42d010-12f6-4d78-80a5-cdac5ab6165e ORDERS_DEV_KEY=380f016c-43e2-4bee-9ea0-4e56f902ec57 SEATING_KEY=9effad90-49ca-4f64-90a3-9d439ac6a539 npm start"
+. ~/dotfiles/z/z.sh
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
