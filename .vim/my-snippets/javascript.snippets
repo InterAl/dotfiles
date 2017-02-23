@@ -1,0 +1,150 @@
+snippet it "Testing - it"
+it('${1:description}', () => {
+	${2:body}
+});
+endsnippet
+
+snippet describe "Testing - describe"
+describe('${1:description}', () => {
+	beforeEach(() => {
+	
+	});
+
+	it('${2:description}', () => {
+		${3:body}
+	});
+});
+endsnippet
+
+snippet function "function"
+function ${1:name}(${2:args}) {
+	${3:body}
+}
+endsnippet
+
+snippet afi "inlined named arrow function"
+(${1:args}) => ${2:body}
+endsnippet
+
+snippet afim "inlined named arrow function - multiline"
+(${1:args}) => {
+	${2:body}
+}
+endsnippet
+
+snippet af "arrow function"
+const ${1:name} = (${2:args}) => {
+	${3:body}
+};
+endsnippet
+
+snippet mem "member function"
+${1:name}(${2:args}) {
+	${3:body}
+}
+endsnippet
+
+snippet class "class"
+class ${1:name} {
+	constructor() {
+	
+	}
+
+	${2:body}
+}
+endsnippet
+
+snippet clax "derived class"
+class ${1:name} extends ${2:baseclass} {
+	constructor() {
+		super();
+	}
+
+	${3:body}
+}
+endsnippet
+
+snippet reactcomp
+import _ from 'lodash';
+import React, {Component} from 'react';
+
+export default class ${1:name} extends Component {
+	static propTypes = {
+	
+	};
+
+	constructor(props) {
+		super(props);
+	}
+
+	render() {
+		return (
+			<div>
+
+			</div>
+		);
+	}
+}
+endsnippet
+
+snippet setState
+this.setState({${1:body}});
+endsnippet
+
+snippet module
+import _ from 'lodash';
+
+export default function ${1:name}(${2:args}) {
+	${3:body}
+}
+endsnippet
+
+snippet import
+import ${1:alias} from '${2:path}';
+endsnippet
+
+snippet lodash
+import _ from 'lodash';
+endsnippet
+
+snippet react
+import React from 'react';
+endsnippet
+
+snippet export
+export function ${1:name}(${2:args}) {
+	${3:body}
+}
+endsnippet
+
+snippet obj
+const ${1:name} = {
+	${2:properties}
+};
+endsnippet
+
+snippet dest
+const {${1:fields}} = ${2:source};
+endsnippet
+
+snippet proxy
+return new Proxy({}, {
+	get(/*target, propKey, receiver*/) {
+		return function (/*...args*/) {
+			return {};
+		};
+	}
+});
+endsnippet
+
+snippet div
+<div>
+	${1:body}
+</div>
+endsnippet
+
+snippet classnames
+className={classNames('${1:baseClass}', {
+	${2:conditionalClass}: ${3:true}
+})}
+endsnippet
