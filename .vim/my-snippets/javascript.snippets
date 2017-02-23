@@ -16,9 +16,18 @@ describe('${1:description}', () => {
 });
 endsnippet
 
-snippet function "function"
+snippet fun "function"
 function ${1:name}(${2:args}) {
-	${3:body}
+	${3}${VISUAL}
+}
+endsnippet
+
+snippet try "try/catch"
+try {
+    ${1:${VISUAL:body}}
+} catch (err) {
+    console.error('${2:message}');
+    throw err;
 }
 endsnippet
 
@@ -40,7 +49,7 @@ endsnippet
 
 snippet mem "member function"
 ${1:name}(${2:args}) {
-	${3:body}
+	${3:${VISUAL:body}}
 }
 endsnippet
 
@@ -107,6 +116,11 @@ snippet lodash
 import _ from 'lodash';
 endsnippet
 
+snippet redux
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+endsnippet
+
 snippet react
 import React from 'react';
 endsnippet
@@ -139,7 +153,7 @@ endsnippet
 
 snippet div
 <div>
-	${1:body}
+	${1:${VISUAL:body}}
 </div>
 endsnippet
 
@@ -147,4 +161,24 @@ snippet classnames
 className={classNames('${1:baseClass}', {
 	${2:conditionalClass}: ${3:true}
 })}
+endsnippet
+
+snippet cl
+console.log('${1}', ${2});
+endsnippet
+
+snippet connect
+function mapStateToProps(state) {
+    return {
+        ${2}
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({
+        ${3}
+    }, dispatch);
+}
+
+connect(mapStateToProps, mapDispatchToProps)(${1:ComponentName});
 endsnippet
