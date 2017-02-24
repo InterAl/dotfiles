@@ -17,7 +17,7 @@ describe('${1:description}', () => {
 endsnippet
 
 snippet fun "function"
-function ${1:name}(${2:args}) {
+function ${1:name}(${2}) {
 	${3}${VISUAL}
 }
 endsnippet
@@ -32,44 +32,50 @@ try {
 endsnippet
 
 snippet afi "inlined named arrow function"
-(${1:args}) => ${2:body}
+(${1}) => ${2}
 endsnippet
 
 snippet afim "inlined named arrow function - multiline"
-(${1:args}) => {
-	${2:body}
+(${1}) => {
+	${2}
 }
 endsnippet
 
 snippet af "arrow function"
-const ${1:name} = (${2:args}) => {
-	${3:body}
+const ${1} = (${2}) => {
+	${3}
 };
 endsnippet
 
 snippet mem "member function"
-${1:name}(${2:args}) {
-	${3:${VISUAL:body}}
+${1}(${2}) {
+	${3:${VISUAL}}
 }
 endsnippet
 
 snippet class "class"
-class ${1:name} {
+class ${1:Name} {
 	constructor() {
 	
 	}
 
-	${2:body}
+	${2}
 }
 endsnippet
 
 snippet clax "derived class"
-class ${1:name} extends ${2:baseclass} {
+class ${1:Name} extends ${2:BaseClass} {
 	constructor() {
 		super();
 	}
 
-	${3:body}
+	${3}
+}
+endsnippet
+
+snippet ctor "constructor"
+constructor(${1}) {
+	${2}
 }
 endsnippet
 
@@ -108,10 +114,6 @@ export default function ${1:name}(${2:args}) {
 }
 endsnippet
 
-snippet import
-import ${1:alias} from '${2:path}';
-endsnippet
-
 snippet lodash
 import _ from 'lodash';
 endsnippet
@@ -125,7 +127,7 @@ snippet react
 import React from 'react';
 endsnippet
 
-snippet export
+snippet ex
 export function ${1:name}(${2:args}) {
 	${3:body}
 }
@@ -152,7 +154,7 @@ return new Proxy({}, {
 endsnippet
 
 snippet div
-<div>
+<div className='${2:class}'>
 	${1:${VISUAL:body}}
 </div>
 endsnippet
@@ -181,4 +183,10 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(${1:ComponentName});
+endsnippet
+
+snippet ret
+return (
+	${VISUAL}
+);
 endsnippet
