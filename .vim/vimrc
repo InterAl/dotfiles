@@ -127,7 +127,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:UltiSnipsSnippetDirectories=["~/.vim/my-snippets", "my-snippets"]
 let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsJumpForwardTrigger="<c-e>"
-let g:UltiSnipsJumpBackwardTrigger="<c-p>"
+let g:UltiSnipsJumpBackwardTrigger="<c-x>"
 let g:UltiSnipsEditSplit="vertical"
 
 "fzf

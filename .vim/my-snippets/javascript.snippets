@@ -16,6 +16,12 @@ describe('${1:description}', () => {
 });
 endsnippet
 
+snippet before "Testing - beforeEach"
+beforeEach(() => {
+	${1}
+});
+endsnippet
+
 snippet fun "function"
 function ${1:name}(${2}) {
 	${3}${VISUAL}
@@ -189,4 +195,12 @@ snippet ret
 return (
 	${VISUAL}
 );
+endsnippet
+
+snippet ade
+assert.deepEqual(${1}, ${2});
+endsnippet
+
+snippet ae
+assert.equal(${1}, ${2});
 endsnippet
