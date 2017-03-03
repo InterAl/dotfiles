@@ -120,6 +120,14 @@ export default function ${1:name}(${2:args}) {
 }
 endsnippet
 
+snippet excla
+export default class ${1:Name} {
+	constructor(${2}) {
+	
+	}
+}
+endsnippet
+
 snippet lodash
 import _ from 'lodash';
 endsnippet
@@ -175,6 +183,12 @@ snippet cl
 console.log('${1}', ${2});
 endsnippet
 
+snippet cll
+console.log('\n===================');
+console.log(${1});
+console.log('\n===================');
+endsnippet
+
 snippet connect
 function mapStateToProps(state) {
     return {
@@ -203,4 +217,10 @@ endsnippet
 
 snippet ae
 assert.equal(${1}, ${2});
+endsnippet
+
+snippet propTypes
+static propTypes = {
+	${1}
+};
 endsnippet
