@@ -2,6 +2,7 @@
 --ignore-file=match:.tsv
 --ignore-file=match:.jsbundle
 --ignore-file=is:tags
+--ignore-file=is:.babel-cache
 --ignore-dir=coverage
 --ignore-dir=assets
 --ignore-dir=android
