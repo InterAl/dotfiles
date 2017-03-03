@@ -131,7 +131,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-x>"
 let g:UltiSnipsEditSplit="vertical"
 
 "fzf
-map <C-n> :FZF<cr>
+nmap <C-n> :let $FZF_DEFAULT_COMMAND = 'find . -type f -o -path "*/node_modules" -prune -o -path "*/.git" -prune'<cr>:FZF --reverse<cr>
+nmap <C-m> :let $FZF_DEFAULT_COMMAND = 'find . -type f -o -path "*/.git" -prune'<cr>:FZF --reverse<cr>
 
 "nerd-tree-tabs
 let NERDTreeIgnore=['node_modules']
