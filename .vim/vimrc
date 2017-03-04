@@ -112,11 +112,6 @@ command! Wq wq<bang>
 command! WQ wq<bang>
 nmap <F4> :let @* = expand("%:p")<CR>
 
-"snippets
-command! Lodash :normal iimport _ from 'lodash';<ESC>
-command! Class :normal iexport default class<ESC>
-command! React :normal iimport React, {Component} from 'react';<ESC>
-
 "jsx
 let g:jsx_ext_required = 0
 
@@ -144,37 +139,12 @@ set backspace=2
 set shortmess+=c
 set completeopt-=preview
 
-
 "vim-dispatch
 autocmd FileType javascript let b:dispatch = 'mocha --watch --compilers js:babel-register --require ignore-styles --require spec/jsdomSetup.js'
 nnoremap <F9> :Dispatch<CR>
 
 "Highlight in NERDTree the active buffer
 "autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
-
-"******************************************************
-                  "EasyMotion"
-"******************************************************
-
-" let g:EasyMotion_do_mapping = 0 " Disable default mappings
-"
-" " Jump to anywhere you want with minimal keystrokes, with just one key binding.
-" " `s{char}{label}`
-" nmap s <Plug>(easymotion-overwin-f)
-" " or
-" " `s{char}{char}{label}`
-" " Need one more keystroke, but on average, it may be more comfortable.
-" nmap s <Plug>(easymotion-overwin-f2)
-"
-" " Turn on case insensitive feature
-" let g:EasyMotion_smartcase = 1
-"
-" " JK motions: Line motions
-" map <Leader>j <Plug>(easymotion-j)
-" map <Leader>k <Plug>(easymotion-k)
-
-"*****************************************************"
-"*****************************************************"
 
 " air-line
 let g:airline#extensions#tabline#enabled = 1

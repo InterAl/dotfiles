@@ -1,17 +1,17 @@
 snippet it "Testing - it"
-it('${1:description}', () => {
-	${2:body}
+it('${1}', () => {
+	${2}
 });
 endsnippet
 
 snippet describe "Testing - describe"
-describe('${1:description}', () => {
+describe('${1}', () => {
 	beforeEach(() => {
 	
 	});
 
 	it('${2:description}', () => {
-		${3:body}
+		${3}
 	});
 });
 endsnippet
@@ -30,7 +30,7 @@ endsnippet
 
 snippet try "try/catch"
 try {
-    ${1:${VISUAL:body}}
+    ${1:${VISUAL}}
 } catch (err) {
     console.error('${2:message}');
     throw err;
@@ -109,14 +109,14 @@ export default class ${1:name} extends Component {
 endsnippet
 
 snippet setState
-this.setState({${1:body}});
+this.setState({${1}});
 endsnippet
 
 snippet module
 import _ from 'lodash';
 
 export default function ${1:name}(${2:args}) {
-	${3:body}
+	${3}
 }
 endsnippet
 
@@ -143,7 +143,7 @@ endsnippet
 
 snippet ex
 export function ${1:name}(${2:args}) {
-	${3:body}
+	${3}
 }
 endsnippet
 
@@ -169,7 +169,7 @@ endsnippet
 
 snippet div
 <div className='${2:class}'>
-	${1:${VISUAL:body}}
+	${1:${VISUAL}}
 </div>
 endsnippet
 
