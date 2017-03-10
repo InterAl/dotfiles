@@ -81,7 +81,8 @@ nmap <leader>l :bnext<CR>
 nmap <leader>h :bprevious<CR>
 nmap <leader>bq :bp <BAR> bd #<CR>
 nmap <leader>bl :ls<CR>"
-nmap <leader>n :noh<CR>
+nmap <leader>n :cn<CR>
+nmap <leader>b :cp<CR>
 nmap <leader>t :NERDTreeTabsToggle<CR>
 nmap <leader>tq :tabclose<CR>
 nmap <leader>r :source ~/.vim/vimrc<CR>
@@ -127,7 +128,7 @@ let g:UltiSnipsEditSplit="vertical"
 
 "fzf
 nmap <C-n> :let $FZF_DEFAULT_COMMAND = 'find . -type f -o -path "*/node_modules" -prune -o -path "*/.git" -prune'<cr>:FZF --reverse<cr>
-nmap <C-m> :let $FZF_DEFAULT_COMMAND = 'find . -type f -o -path "*/.git" -prune'<cr>:FZF --reverse<cr>
+nmap <C-t> :let $FZF_DEFAULT_COMMAND = 'find . -type f -o -path "*/.git" -prune'<cr>:FZF --reverse<cr>
 
 "nerd-tree-tabs
 let NERDTreeIgnore=['node_modules']
