@@ -141,6 +141,14 @@ snippet react
 import React from 'react';
 endsnippet
 
+snippet moment
+import moment from 'moment';
+endsnippet
+
+snippet chai
+import {assert} from 'chai';
+endsnippet
+
 snippet ex
 export function ${1:name}(${2:args}) {
 	${3}
@@ -183,6 +191,14 @@ snippet cl
 console.log('${1}', ${2});
 endsnippet
 
+snippet ct
+console.time('${1}');
+endsnippet
+
+snippet cte
+console.timeEnd('${1}');
+endsnippet
+
 snippet cll
 console.log('\n===================');
 console.log(${1});
@@ -219,8 +235,16 @@ snippet ae
 assert.equal(${1}, ${2});
 endsnippet
 
+snippet ain
+assert.include(${1}, ${2});
+endsnippet
+
 snippet propTypes
 static propTypes = {
 	${1}
 };
+endsnippet
+
+snippet rpt
+${1}: React.PropTypes.${2}
 endsnippet
