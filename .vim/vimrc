@@ -39,6 +39,8 @@ filetype on
 au BufNewFile,BufRead *.icss set filetype=css
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+set clipboard=unnamed
+
 set noswapfile
 set encoding=utf-8
 syntax on
