@@ -58,6 +58,9 @@ let g:solarized_contrast = "normal"
 let g:solarized_visibility="normal"
 colorscheme solarized
 highlight LineNr ctermfg=grey
+highlight Pmenu ctermfg=241 ctermbg=254
+highlight PmenuSel ctermfg=234 ctermbg=254
+set cursorline
 
 "tabs
 set autoindent
@@ -158,7 +161,7 @@ nnoremap <F9> :Dispatch<CR>
 
 " air-line
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='solarized'
+let g:airline_theme='base16'
 let g:airline_powerline_fonts = 1
 
  if !exists('g:airline_symbols')
