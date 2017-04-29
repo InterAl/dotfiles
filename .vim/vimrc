@@ -6,6 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=/usr/local/opt/fzf
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'pbogut/fzf-mru.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mxw/vim-jsx'
@@ -32,6 +33,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-dispatch'
 Plugin 'henrik/vim-indexed-search'
 Plugin 'Tagbar'
+Plugin 'bkad/CamelCaseMotion'
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 filetype plugin indent on    " required
@@ -39,11 +42,9 @@ filetype on
 au BufNewFile,BufRead *.icss set filetype=css
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-set clipboard=unnamed
-
 set noswapfile
 set encoding=utf-8
-syntax on
+syntax enable
 set rnu
 let mapleader=" "
 set textwidth=80
@@ -51,10 +52,12 @@ set nowrap
 set colorcolumn=+1
 
 "colors
-colorscheme molokai
-let g:rehash256 = 1
+set background=dark
 set t_Co=256
-set cursorline
+let g:solarized_contrast = "normal"
+let g:solarized_visibility="normal"
+colorscheme solarized
+highlight LineNr ctermfg=grey
 
 "tabs
 set autoindent
@@ -115,6 +118,9 @@ command! Wq wq<bang>
 command! WQ wq<bang>
 nmap <F4> :let @* = expand("%:p")<CR>
 
+"CamelCaseMotion
+call camelcasemotion#CreateMotionMappings('\')
+
 "jsx
 let g:jsx_ext_required = 0
 
@@ -131,6 +137,7 @@ let g:UltiSnipsEditSplit="vertical"
 "fzf
 nmap <C-n> :let $FZF_DEFAULT_COMMAND = 'find . -type f -o -path "*/node_modules" -prune -o -path "*/.git" -prune'<cr>:FZF --reverse<cr>
 nmap <C-t> :let $FZF_DEFAULT_COMMAND = 'find . -type f -o -path "*/.git" -prune'<cr>:FZF --reverse<cr>
+nmap <C-k> :FZFMru --reverse<cr>
 
 "nerd-tree-tabs
 let NERDTreeIgnore=['node_modules']
@@ -151,7 +158,7 @@ nnoremap <F9> :Dispatch<CR>
 
 " air-line
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='dark'
+let g:airline_theme='solarized'
 let g:airline_powerline_fonts = 1
 
  if !exists('g:airline_symbols')
