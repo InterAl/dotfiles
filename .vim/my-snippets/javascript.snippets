@@ -204,9 +204,7 @@ console.timeEnd('${1}');
 endsnippet
 
 snippet cll
-console.log('\n===================');
-console.log(${1});
-console.log('\n===================');
+console.log('%c${1}','background:#222;color:#bada55;font-size:18px',${2});
 endsnippet
 
 snippet connect
@@ -251,4 +249,8 @@ endsnippet
 
 snippet rpt
 ${1}: React.PropTypes.${2}
+endsnippet
+
+snippet bind
+this.${1} = this.$1.bind(this);
 endsnippet
