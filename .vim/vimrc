@@ -146,8 +146,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-x>"
 let g:UltiSnipsEditSplit="vertical"
 
 "fzf
-nmap <C-n> :let $FZF_DEFAULT_COMMAND = 'find . -type f -o -path "*/node_modules" -prune -o -path "*/.git" -prune'<cr>:FZF --reverse<cr>
-nmap <C-t> :let $FZF_DEFAULT_COMMAND = 'find . -type f -o -path "*/.git" -prune'<cr>:FZF --reverse<cr>
+nmap <C-n> :let $FZF_DEFAULT_COMMAND = 'find . -type f -o -path "*/node_modules" -prune -o -path "*/.git" -prune -o -path "*/dist" -prune'<cr>:FZF --reverse<cr>
+nmap <C-t> :let $FZF_DEFAULT_COMMAND = 'find . -type f -o -path "*/.git" -prune -o -path "*/dist" -prune'<cr>:FZF --reverse<cr>
 nmap <C-k> :FZFMru --reverse<cr>
 
 "nerd-tree-tabs
