@@ -9,3 +9,4 @@
 --ignore-dir=ios
 --ignore-dir=dist
 --ignore-dir=public
+--ignore-dir=target

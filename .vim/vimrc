@@ -16,15 +16,11 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'surround.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/syntastic'
-" Plugin 'ervandew/supertab'
-" Plugin 'ZoomWin'
 Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'tComment'
 Plugin 'jistr/vim-nerdtree-tabs'
-" Plugin 'mattn/emmet-vim'
 Plugin 'delimitMate.vim'
 Plugin 'moll/vim-node'
 Plugin 'kshenoy/vim-signature'
@@ -32,14 +28,18 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-dispatch'
 Plugin 'henrik/vim-indexed-search'
-Plugin 'Tagbar'
+" Plugin 'Tagbar'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'rizzatti/dash.vim'
+Plugin 'szw/vim-maximizer'
 
 call vundle#end()
 filetype plugin indent on    " required
 filetype on
 au BufNewFile,BufRead *.icss set filetype=css
+au BufNewFile,BufRead *.ts set filetype=javascript
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 set noswapfile
@@ -75,7 +75,9 @@ set ignorecase
 set smartcase
 
 "tags
-"set tags=tags;/
+set tags=tags;/
+"update tags
+command! Uptag exec "!ctags -R " . getcwd()
 
 "scrolling
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
@@ -95,6 +97,12 @@ nmap <leader>t :NERDTreeTabsToggle<CR>
 nmap <leader>tq :tabclose<CR>
 nmap <leader>r :source ~/.vim/vimrc<CR>
 nmap <leader>g :NERDTreeTabsFind<CR>
+
+"jump to module
+nmap <leader>j gdf'gf
+
+"find word usages (under cursor)
+nmap <leader>u yiw:Ack <C-r>"<CR>
 
 nmap <C-S-f> :Ack<space>
 map <S-y> "*y
