@@ -3,13 +3,14 @@
 --exclude=node_modules
 --exclude=.git
 --exclude=dist
+--exclude=Libraries
 
 --langdef=typescript
 --langmap=typescript:.ts.js
---regex-typescript=/^[ \t]*(export([ \t]+default)?([ \t]+abstract)?)?[ \t]*class[ \t]+([a-zA-Z0-9_]+)/\4/c,classes/
+--regex-typescript=/class[ \t]+([a-zA-Z0-9_]+)/\1/c,classes/
 --regex-typescript=/^[ \t]*(declare)?[ \t]*namespace[ \t]+([a-zA-Z0-9_]+)/\2/c,modules/
 --regex-typescript=/^[ \t]*(export)?[ \t]*module[ \t]+([a-zA-Z0-9_]+)/\2/n,modules/
---regex-typescript=/^[ \t]*(export([ \t]+default)?([ \t]+async)?)?[ \t]*function[ \t]+([a-zA-Z0-9_]+)/\4/f,functions/
+--regex-typescript=/^[ \t]*export([ \t]+default)?([ \t]+async)?[ \t]*function[ \t]+([a-zA-Z0-9_]+)/\3/f,functions/
 --regex-typescript=/^[ \t]*export[ \t]+(var|let|const)[ \t]+([a-zA-Z0-9_]+)/\2/v,variables/
 --regex-typescript=/^[ \t]*(var|let|const)[ \t]+([a-zA-Z0-9_]+)[ \t]*=[ \t]*function[ \t]*\(\)/\2/v,varlambdas/
 --regex-typescript=/^[ \t]*(export)?[ \t]*(public|protected|private)[ \t]+(static)?[ \t]*([a-zA-Z0-9_]+)/\4/m,members/
