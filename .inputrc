@@ -1,0 +1,29 @@
+set editing-mode vi
+$if mode=vi
+
+set keymap vi-command
+# these are for vi-command mode
+Control-l: clear-screen
+"D":kill-line
+"dw": kill-word
+"dd": kill-whole-line
+"db": backward-kill-word
+"cc": "ddi"
+"cw": "dwi"
+"cb": "dbi"
+"diw": "lbdw"
+"yiw": "lbyw"
+"ciw": "lbcw"
+"diW": "lBdW"
+"yiW": "lByW"
+"ciW": "lBcW"
+"gg": beginning-of-history
+"G": end-of-history
+
+set keymap vi-insert
+# these are for vi-insert mode
+Control-l: clear-screen 
+Control-p: history-search-backward
+Control-n: history-search-forward
+"\e.":yank-last-arg
+$endif

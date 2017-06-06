@@ -35,12 +35,15 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'szw/vim-maximizer'
+Plugin 'vimwiki/vimwiki'
 
 call vundle#end()
 filetype plugin indent on    " required
 filetype on
 au BufNewFile,BufRead *.icss set filetype=css
 au BufNewFile,BufRead *.ts set filetype=javascript
+au BufRead *.book Book
+command! Book set foldcolumn=2 | set nornu
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 set noswapfile
@@ -88,14 +91,12 @@ set sidescroll=1
 "buffers
 set hidden
 nmap <leader>T :enew<cr>
-nmap <leader>l :bnext<CR>
-nmap <leader>h :bprevious<CR>
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
 nmap <leader>bq :bp <BAR> bd #<CR>
-nmap <leader>bl :ls<CR>"
 nmap <leader>n :cn<CR>
 nmap <leader>b :cp<CR>
 nmap <leader>t :NERDTreeTabsToggle<CR>
-nmap <leader>tq :tabclose<CR>
 nmap <leader>r :source ~/.vim/vimrc<CR>
 nmap <leader>g :NERDTreeTabsFind<CR>
 
@@ -129,6 +130,8 @@ command! WQ wq<bang>
 command! Wq wq<bang>
 command! WQ wq<bang>
 nmap <F4> :let @* = expand("%:p")<CR>
+:inoremap <C-E> <C-X><C-E>
+:inoremap <C-Y> <C-X><C-Y>
 
 "CamelCaseMotion
 call camelcasemotion#CreateMotionMappings('\')

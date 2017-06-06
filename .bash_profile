@@ -1,3 +1,4 @@
+set -o vi
 PS1="\w$ "
 alias ll="ls -la"
 alias g="git"
