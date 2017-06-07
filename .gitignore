@@ -3,3 +3,4 @@ bundle/
 *.swp
 tags
 Session.vim
+package-lock.json

@@ -130,8 +130,6 @@ command! WQ wq<bang>
 command! Wq wq<bang>
 command! WQ wq<bang>
 nmap <F4> :let @* = expand("%:p")<CR>
-:inoremap <C-E> <C-X><C-E>
-:inoremap <C-Y> <C-X><C-Y>
 
 "CamelCaseMotion
 call camelcasemotion#CreateMotionMappings('\')
