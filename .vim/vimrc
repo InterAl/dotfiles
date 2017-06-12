@@ -93,7 +93,7 @@ set hidden
 nmap <leader>T :enew<cr>
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
-nmap <leader>bq :bp <BAR> bd #<CR>
+nmap <leader>q :bp <BAR> bd #<CR>
 nmap <leader>n :cn<CR>
 nmap <leader>b :cp<CR>
 nmap <leader>t :NERDTreeTabsToggle<CR>
@@ -149,7 +149,7 @@ let g:UltiSnipsEditSplit="vertical"
 
 "fzf
 nmap <C-n> :let $FZF_DEFAULT_COMMAND = 'find . -type f -o -path "*/node_modules" -prune -o -path "*/.git" -prune -o -path "*/dist" -prune'<cr>:FZF --reverse<cr>
-nmap <C-t> :let $FZF_DEFAULT_COMMAND = 'find . -type f -o -path "*/.git" -prune -o -path "*/dist" -prune'<cr>:FZF --reverse<cr>
+nmap <C-t> :let $FZF_DEFAULT_COMMAND = 'find . -type f -o -path "*/.git" -prune'<cr>:FZF --reverse<cr>
 nmap <C-k> :FZFMru --reverse<cr>
 
 "nerd-tree-tabs
@@ -170,6 +170,9 @@ nnoremap <F9> :Dispatch<CR>
 "autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
 
 " air-line
+let g:airline_skip_empty_sections = 1
+let g:airline_section_b = ''
+let g:airline_section_y = ''
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='base16'
 let g:airline_powerline_fonts = 1
