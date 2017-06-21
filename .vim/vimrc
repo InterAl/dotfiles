@@ -11,6 +11,7 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mxw/vim-jsx'
+" slow
 Plugin 'pangloss/vim-javascript'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -91,8 +92,6 @@ set sidescroll=1
 "buffers
 set hidden
 nmap <leader>T :enew<cr>
-nnoremap <Tab> :bnext<CR>
-nnoremap <S-Tab> :bprevious<CR>
 nmap <leader>q :bp <BAR> bd #<CR>
 nmap <leader>n :cn<CR>
 nmap <leader>b :cp<CR>
