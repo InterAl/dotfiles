@@ -30,11 +30,17 @@ alias chromenosec="open -a Google\ Chrome --args --disable-web-security --user-d
 export NVM_DIR="/Users/alonn/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+alias ntw="npm run test:watchSingle "
 alias npmpublic="npm config set registry https://registry.npmjs.org/"
 alias npmprivate="npm config set registry http://repo.dev.wix/artifactory/api/npm/npm-repos"
 export REACT_EDITOR=vim
 
-alias sshresonators="ssh -i \"./r_admin.pem\" ubuntu@ec2-52-27-92-5.us-west-2.compute.amazonaws.com"
+. ~/.bash_profile_secrets
 . ~/dotfiles/z/z.sh
 
+alias printcolors="for i in {0..255}; do   printf \"\x1b[38;5;${i}mcolour${i}\x1b[0m\n\"; done"
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+bind 'set show-mode-in-prompt on'
+
+export INPUTRC="~/.inputrc"
