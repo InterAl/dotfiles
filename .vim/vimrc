@@ -12,8 +12,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'mxw/vim-jsx'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'surround.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -42,6 +40,13 @@ filetype on
 au BufNewFile,BufRead *.icss set filetype=css
 au BufNewFile,BufRead *.ts set filetype=javascript
 au BufRead *.book Book
+
+" if version >= 700
+"     highlight statusLine cterm=bold ctermfg=black ctermbg=red
+"     au InsertLeave * highlight StatusLine cterm=bold ctermfg=black ctermbg=red
+"     au InsertEnter * highlight StatusLine cterm=bold ctermfg=black ctermbg=yellow
+" endif
+
 command! Book set foldcolumn=2 | set nornu
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -63,6 +68,7 @@ colorscheme solarized
 highlight LineNr ctermfg=grey
 highlight Pmenu ctermfg=241 ctermbg=254
 highlight PmenuSel ctermfg=234 ctermbg=254
+hi StatusLine ctermbg=50 ctermfg=23
 set cursorline
 
 "tabs
@@ -108,7 +114,6 @@ nmap <C-S-f> :Ack<space>
 map <S-y> "*y
 nmap <leader>p "*p
 nmap <leader><S-p> "*<S-p>
-nmap <C-b> <C-]>
 nnoremap <S-k> "0P
 nnoremap <leader>d :BufOnly<CR>
 
@@ -172,41 +177,3 @@ let g:ale_fixers = {
 
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
-
-" air-line
-let g:airline_skip_empty_sections = 1
-let g:airline_section_b = ''
-let g:airline_section_y = ''
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='base16'
-let g:airline_powerline_fonts = 1
-
-" set statusline=%{LinterStatus()}
-
-
- if !exists('g:airline_symbols')
-     let g:airline_symbols = {}
- endif
-
-     " unicode symbols
- let g:airline_left_sep = '»'
- let g:airline_left_sep = '▶'
- let g:airline_right_sep = '«'
- let g:airline_right_sep = '◀'
- let g:airline_symbols.linenr = '␊'
- let g:airline_symbols.linenr = '␤'
- let g:airline_symbols.linenr = '¶'
- let g:airline_symbols.branch = '⎇'
- let g:airline_symbols.paste = 'ρ'
- let g:airline_symbols.paste = 'Þ'
- let g:airline_symbols.paste = '∥'
- let g:airline_symbols.whitespace = 'Ξ'
-
- " airline symbols
- let g:airline_left_sep = ''
- let g:airline_left_alt_sep = ''
- let g:airline_right_sep = ''
- let g:airline_right_alt_sep = ''
- let g:airline_symbols.branch = ''
- let g:airline_symbols.readonly = ''
- let g:airline_symbols.linenr = ''
