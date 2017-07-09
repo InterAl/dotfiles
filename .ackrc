@@ -5,6 +5,7 @@
 --ignore-file=is:.babel-cache
 --ignore-dir=coverage
 --ignore-dir=assets
+--ignore-dir=build
 --ignore-dir=android
 --ignore-dir=ios
 --ignore-dir=dist

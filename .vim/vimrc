@@ -33,6 +33,7 @@ Plugin 'szw/vim-maximizer'
 Plugin 'vimwiki/vimwiki'
 Plugin 'w0rp/ale'
 Plugin 'tpope/vim-repeat'
+Plugin 'ap/vim-buftabline'
 
 call vundle#end()
 filetype plugin indent on    " required
