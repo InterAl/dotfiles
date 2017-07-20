@@ -15,6 +15,12 @@ alias runmocha="mocha --watch --require spec/setup.js"
 alias sourcebash="source ~/.bash_profile"
 bind -x '"\C-\e41": clear;'
 
+shopt -s histappend
+shopt -s histreedit
+shopt -s histverify
+HISTCONTROL='ignoreboth'
+PROMPT_COMMAND="history -a;history -c;history -r; $PROMPT_COMMAND"
+
 export ANDROID_HOME=/usr/local/opt/android-sdk
 PATH="~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:${PATH}"
 PATH="/Applications/Postgres.app/Contents/Versions/9.6/bin:${PATH}"
@@ -41,6 +47,5 @@ export REACT_EDITOR=vim
 alias printcolors="for i in {0..255}; do   printf \"\x1b[38;5;${i}mcolour${i}\x1b[0m\n\"; done"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-bind 'set show-mode-in-prompt on'
 
 export INPUTRC="~/.inputrc"
