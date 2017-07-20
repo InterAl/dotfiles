@@ -4,3 +4,4 @@ bundle/
 tags
 Session.vim
 package-lock.json
+npm-debug.log
