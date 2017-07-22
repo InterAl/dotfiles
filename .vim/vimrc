@@ -34,6 +34,7 @@ Plugin 'w0rp/ale'
 Plugin 'tpope/vim-repeat'
 Plugin 'ap/vim-buftabline'
 Plugin 'YankRing.vim'
+Plugin 'sjl/gundo.vim'
 
 call vundle#end()
 filetype plugin indent on    " required
@@ -213,3 +214,8 @@ let g:ale_lint_on_enter = 0
 " this is so that single char deletes don't end up in the yankring
 let g:yankring_min_element_length = 2
 nnoremap <leader>y :YRShow<CR>
+
+"Gundo
+" f5 toggles the Gundo plugin window
+nnoremap <F5> :GundoToggle<CR>
+let g:gundo_width=80
