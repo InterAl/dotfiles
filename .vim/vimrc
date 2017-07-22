@@ -33,6 +33,7 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'w0rp/ale'
 Plugin 'tpope/vim-repeat'
 Plugin 'ap/vim-buftabline'
+Plugin 'YankRing.vim'
 
 call vundle#end()
 filetype plugin indent on    " required
@@ -207,3 +208,8 @@ let g:ale_linters = {
 
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
+
+"YankRing
+" this is so that single char deletes don't end up in the yankring
+let g:yankring_min_element_length = 2
+nnoremap <leader>y :YRShow<CR>
