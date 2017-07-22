@@ -28,7 +28,6 @@ Plugin 'henrik/vim-indexed-search'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'rizzatti/dash.vim'
 Plugin 'szw/vim-maximizer'
 Plugin 'vimwiki/vimwiki'
 Plugin 'w0rp/ale'
@@ -39,7 +38,7 @@ call vundle#end()
 filetype plugin indent on    " required
 filetype on
 au BufNewFile,BufRead *.icss set filetype=css
-au BufNewFile,BufRead *.ts set filetype=javascript
+au BufNewFile,BufRead *.ts,*.tsx set filetype=typescript.javascript
 au BufRead *.book Book
 
 " if version >= 700
@@ -71,6 +70,19 @@ highlight Pmenu ctermfg=241 ctermbg=254
 highlight PmenuSel ctermfg=234 ctermbg=254
 hi StatusLine ctermbg=50 ctermfg=23
 set cursorline
+
+"gf
+augroup suffixes
+    autocmd!
+
+    let associations = [
+                \["typescript", ".ts,.typescript,.tsx"],
+                \]
+
+    for ft in associations
+        execute "autocmd FileType " . ft[0] . " setlocal suffixesadd=" . ft[1]
+    endfor
+augroup END
 
 "tabs
 set autoindent
@@ -166,6 +178,9 @@ set backspace=2
 set shortmess+=c
 set completeopt-=preview
 let g:ycm_register_as_syntastic_checker = 0
+nnoremap <leader>jd :YcmCompleter GoToType<CR>
+nnoremap <leader>jp :YcmCompleter GetDoc<CR>
+nnoremap <leader>jj :YcmCompleter GetType<CR>
 
 "vim-dispatch
 autocmd FileType javascript let b:dispatch = 'mocha --watch --compilers js:babel-register --require ignore-styles --require spec/jsdomSetup.js'
@@ -174,6 +189,11 @@ nnoremap <F9> :Dispatch<CR>
 "ALE
 let g:ale_fixers = {
     \'javascript': ['eslint']
+\}
+
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'typescript': ['tslint']
 \}
 
 let g:ale_lint_on_text_changed = 'never'
