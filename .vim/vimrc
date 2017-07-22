@@ -58,6 +58,9 @@ let mapleader=" "
 set textwidth=80
 set nowrap
 set colorcolumn=+1
+set ruler " show cursor position in status bar
+set showmode
+set cursorline
 
 "colors
 set background=dark
@@ -69,7 +72,6 @@ highlight LineNr ctermfg=grey
 highlight Pmenu ctermfg=241 ctermbg=254
 highlight PmenuSel ctermfg=234 ctermbg=254
 hi StatusLine ctermbg=50 ctermfg=23
-set cursorline
 
 "gf
 augroup suffixes
@@ -103,7 +105,7 @@ set tags=tags;/
 command! Uptag exec "!ctags -R " . getcwd()
 
 "scrolling
-set scrolloff=8         "Start scrolling when we're 8 lines away from margins
+set scrolloff=2         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 
@@ -146,6 +148,13 @@ command! WQ wq<bang>
 command! Wq wq<bang>
 command! WQ wq<bang>
 nmap <F4> :let @* = expand("%:p")<CR>
+
+" These create newlines like o and O but stay in normal mode
+nnoremap <silent> zj o<Esc>k
+nnoremap <silent> zk O<Esc>j
+
+" <leader>v brings up .vimrc
+noremap <leader>v :e! $MYVIMRC<CR>
 
 "CamelCaseMotion
 call camelcasemotion#CreateMotionMappings('\')
