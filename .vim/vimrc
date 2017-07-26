@@ -27,28 +27,24 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'henrik/vim-indexed-search'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'leafgarland/typescript-vim'
+" Plugin 'leafgarland/typescript-vim'
 Plugin 'szw/vim-maximizer'
 Plugin 'vimwiki/vimwiki'
 Plugin 'w0rp/ale'
 Plugin 'tpope/vim-repeat'
 Plugin 'ap/vim-buftabline'
-Plugin 'YankRing.vim'
+" Plugin 'YankRing.vim'
 Plugin 'sjl/gundo.vim'
 
 call vundle#end()
 filetype plugin indent on    " required
 filetype on
 au BufNewFile,BufRead *.icss set filetype=css
-au BufNewFile,BufRead *.ts,*.tsx set filetype=typescript.javascript
+au BufNewFile,BufRead *.ts set filetype=typescript.javascript
+au BufNewFile,BufRead *.tsx set filetype=typescript.javascript.jsx
+
+"book mode
 au BufRead *.book Book
-
-" if version >= 700
-"     highlight statusLine cterm=bold ctermfg=black ctermbg=red
-"     au InsertLeave * highlight StatusLine cterm=bold ctermfg=black ctermbg=red
-"     au InsertEnter * highlight StatusLine cterm=bold ctermfg=black ctermbg=yellow
-" endif
-
 command! Book set foldcolumn=2 | set nornu
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -75,7 +71,7 @@ highlight Pmenu ctermfg=241 ctermbg=254
 highlight PmenuSel ctermfg=234 ctermbg=254
 hi StatusLine ctermbg=50 ctermfg=23
 
-"gf
+"fix gf for typescript
 augroup suffixes
     autocmd!
 
@@ -107,7 +103,7 @@ set tags=tags;/
 command! Uptag exec "!ctags -R " . getcwd()
 
 "scrolling
-set scrolloff=2         "Start scrolling when we're 8 lines away from margins
+set scrolloff=2         "Start scrolling when we're 2 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 
@@ -151,7 +147,7 @@ command! Wq wq<bang>
 command! WQ wq<bang>
 nmap <F4> :let @* = expand("%:p")<CR>
 
-" These create newlines like o and O but stay in normal mode
+" open lines in normal mode
 nnoremap <silent> zj o<Esc>k
 nnoremap <silent> zk O<Esc>j
 
@@ -189,9 +185,9 @@ set backspace=2
 set shortmess+=c
 set completeopt-=preview
 let g:ycm_register_as_syntastic_checker = 0
-nnoremap <leader>jd :YcmCompleter GoToType<CR>
-nnoremap <leader>jp :YcmCompleter GetDoc<CR>
-nnoremap <leader>jj :YcmCompleter GetType<CR>
+nnoremap <leader>fd :YcmCompleter GoToType<CR>
+nnoremap <leader>fp :YcmCompleter GetDoc<CR>
+nnoremap <leader>ff :YcmCompleter GetType<CR>
 
 "vim-dispatch
 autocmd FileType javascript let b:dispatch = 'mocha --watch --compilers js:babel-register --require ignore-styles --require spec/jsdomSetup.js'
@@ -199,13 +195,17 @@ nnoremap <F9> :Dispatch<CR>
 
 "ALE
 let g:ale_fixers = {
+    \'typescript.javascript': ['tslint'],
     \'javascript': ['eslint']
 \}
 
 let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'typescript': ['tslint']
+\   'typescript.javascript': ['tslint'],
+\   'javascript': ['eslint']
 \}
+
+let g:ale_sign_error = '>'
+let g:ale_set_quickfix = 1
 
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
@@ -214,8 +214,14 @@ let g:ale_lint_on_enter = 0
 " this is so that single char deletes don't end up in the yankring
 let g:yankring_min_element_length = 2
 nnoremap <leader>y :YRShow<CR>
+let g:yankring_replace_n_pkey = '<m-p>'
+let g:yankring_replace_n_nkey = '<m-n>'
 
 "Gundo
 " f5 toggles the Gundo plugin window
 nnoremap <F5> :GundoToggle<CR>
 let g:gundo_width=80
+
+"TS
+set makeprg=tsc
+set errorformat=%+A\ %#%f\ %#(%l\\\,%c):\ %m,%C%m
