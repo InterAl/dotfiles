@@ -1,6 +1,7 @@
 set -o vi
 PS1="\w$ "
 alias ll="ls -la"
+alias v="vim"
 alias g="git"
 alias gs="g status -s"
 alias gst="git status"
