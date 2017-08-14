@@ -35,6 +35,8 @@ Plugin 'tpope/vim-repeat'
 Plugin 'ap/vim-buftabline'
 " Plugin 'YankRing.vim'
 Plugin 'sjl/gundo.vim'
+Plugin 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
+Plugin 'maksimr/vim-jsbeautify'
 
 call vundle#end()
 filetype plugin indent on    " required
@@ -129,6 +131,7 @@ nmap <leader>p "*p
 nmap <leader><S-p> "*<S-p>
 nnoremap <S-k> "0P
 nnoremap <leader>d :BufOnly<CR>
+vnoremap <C-h> :call RangeJsBeautify()<CR>
 
 if bufwinnr(1)
   map <Down> <C-W>+
@@ -146,6 +149,8 @@ command! WQ wq<bang>
 command! Wq wq<bang>
 command! WQ wq<bang>
 nmap <F4> :let @* = expand("%:p")<CR>
+nmap <F10> :cn<CR>
+nmap <F11> :cp<CR>
 
 " open lines in normal mode
 nnoremap <silent> zj o<Esc>k
@@ -205,7 +210,6 @@ let g:ale_linters = {
 \}
 
 let g:ale_sign_error = '>'
-let g:ale_set_quickfix = 1
 
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
