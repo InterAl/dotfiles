@@ -6,6 +6,7 @@
 --ignore-file=is:.babel-cache
 --ignore-file=is:yarn.lock
 --ignore-file=is:package.lock
+--ignore-file=is:package-lock.json
 --ignore-dir=coverage
 --ignore-dir=assets
 --ignore-dir=build
