@@ -16,12 +16,6 @@ alias runmocha="mocha --watch --require spec/setup.js"
 alias sourcebash="source ~/.bash_profile"
 bind -x '"\C-\e41": clear;'
 
-shopt -s histappend
-shopt -s histreedit
-shopt -s histverify
-HISTCONTROL='ignoreboth'
-PROMPT_COMMAND="history -a;history -c;history -r; $PROMPT_COMMAND"
-
 export ANDROID_HOME=/usr/local/opt/android-sdk
 PATH="~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:${PATH}"
 PATH="/Applications/Postgres.app/Contents/Versions/9.6/bin:${PATH}"
