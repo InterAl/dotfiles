@@ -28,10 +28,16 @@ getNpmVersion() {
 alias npmver=getNpmVersion
 alias chromenosec="open -a Google\ Chrome --args --disable-web-security --user-data-dir=/foo"
 
+killPort() {
+    lsof -i tcp:$1 | grep LISTEN | awk '{print $2}' | xargs kill -9
+}
+alias killport=killPort
+
 export NVM_DIR="/Users/alonn/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 alias ntw="npm run test:watchSingle "
+alias yoshitest="./node_modules/mocha/bin/mocha --watch-extensions ts,tsx --watch --recursive --require ./node_modules/yoshi/config/test-setup.js"
 alias npmpublic="npm config set registry https://registry.npmjs.org/"
 alias npmprivate="npm config set registry http://repo.dev.wix/artifactory/api/npm/npm-repos"
 export REACT_EDITOR=vim
