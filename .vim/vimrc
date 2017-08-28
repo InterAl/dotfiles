@@ -112,7 +112,7 @@ set sidescroll=1
 "buffers
 set hidden
 nmap <leader>T :enew<cr>
-nmap <leader>q :bp <BAR> bd #<CR>
+nmap <leader>q :Sayonara!<cr>
 nmap <leader>n :cn<CR>
 nmap <leader>b :cp<CR>
 nmap <leader>t :NERDTreeTabsToggle<CR>
@@ -140,6 +140,14 @@ if bufwinnr(1)
   map <Left> <C-W>>
 endif
 
+function! ToggleSyntax()
+    if exists("g:syntax_on")
+        syntax off
+    else
+        syntax on
+    endif
+endfunction
+
 "useful remappings
 command! W w
 command! Q q
@@ -151,6 +159,7 @@ command! WQ wq<bang>
 nmap <F4> :let @* = expand("%:p")<CR>
 nmap <F10> :cn<CR>
 nmap <F11> :cp<CR>
+nmap <F12> :call ToggleSyntax()<CR>
 
 " open lines in normal mode
 nnoremap <silent> zj o<Esc>k
