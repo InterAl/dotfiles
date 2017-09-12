@@ -37,6 +37,8 @@ Plugin 'ap/vim-buftabline'
 Plugin 'sjl/gundo.vim'
 Plugin 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 Plugin 'maksimr/vim-jsbeautify'
+Plugin 'johngrib/vim-game-code-break'
+Plugin 'InterAl/vim-sdcv'
 
 call vundle#end()
 filetype plugin indent on    " required
@@ -47,9 +49,21 @@ au BufNewFile,BufRead *.tsx set filetype=typescript.javascript.jsx
 
 "book mode
 au BufRead *.book Book
-command! Book set foldcolumn=2 | set nornu
+command! Book call SetBook()
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+
+function! SetBook()
+    set foldcolumn=2
+    set nornu
+    nmap <F2> :call SearchWord('n')<CR><C-W><C-P>
+    vmap <F2> :call SearchWord('v')<CR><C-W><C-P>
+    "close the last window
+    map <F3> <C-W><C-P><C-W><C-C>
+endfunction
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+
 set noswapfile
 set encoding=utf-8
 syntax enable
@@ -60,7 +74,7 @@ set nowrap
 set colorcolumn=+1
 set ruler " show cursor position in status bar
 set showmode
-set cursorline
+" set cursorline
 
 "colors
 set background=dark
