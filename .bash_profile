@@ -42,7 +42,7 @@ alias printcolors="for i in {0..255}; do   printf \"\x1b[38;5;${i}mcolour${i}\x1
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-export NVM_DIR="~/.nvm"
+export NVM_DIR="/Users/alonn/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # PATH
