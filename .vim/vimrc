@@ -56,6 +56,7 @@ command! Book call SetBook()
 function! SetBook()
     set foldcolumn=2
     set nornu
+    set scrolloff=0
 endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -128,6 +129,9 @@ nmap <leader>b :cp<CR>
 nmap <leader>t :NERDTreeTabsToggle<CR>
 nmap <leader>r :source ~/.vim/vimrc<CR>
 nmap <leader>g :NERDTreeTabsFind<CR>
+nmap <C-b> :Buffers<CR>
+nmap ]b :bnext<CR>
+nmap [b :bprev<CR>
 
 "jump to module
 nmap <leader>j gdf'gf
