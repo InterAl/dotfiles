@@ -8,6 +8,7 @@ alias ga="git add ."
 alias gr="git reset"
 alias gst="git status"
 alias gl="git log --d --graph --all"
+alias gld="git log --d"
 alias gci="git commit"
 alias gco="git checkout"
 alias gd="git diff"
@@ -55,3 +56,6 @@ export PATH
 export INPUTRC="~/.inputrc"
 
 export REACT_EDITOR=vim
+
+# For weechat (dispaly hebrew)
+export LANG=en_US.UTF-8 LC_CTYPE="en_US.UTF-8"
