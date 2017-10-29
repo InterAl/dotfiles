@@ -39,6 +39,7 @@ Plugin 'maksimr/vim-jsbeautify'
 Plugin 'johngrib/vim-game-code-break'
 Plugin 'InterAl/vim-sdcv'
 Plugin 'majutsushi/tagbar'
+Plugin 'AssailantLF/vim-active-numbers'
 
 call vundle#end()
 filetype plugin indent on    " required
