@@ -36,6 +36,11 @@ alias yoshitest="./node_modules/mocha/bin/mocha --watch-extensions ts,tsx --watc
 alias npmpublic="npm config set registry https://registry.npmjs.org/"
 alias npmprivate="npm config set registry http://repo.dev.wix/artifactory/api/npm/npm-repos"
 
+convertHeb2utf8() {
+    iconv -f iso-8859-8 -t utf-8 ${1} > ${2}
+}
+alias heb2utf=convertHeb2utf8
+
 . ~/.bash_profile_secrets
 . ~/dotfiles/z/z.sh
 
