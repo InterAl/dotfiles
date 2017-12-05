@@ -64,3 +64,4 @@ export REACT_EDITOR=vim
 
 # For weechat (dispaly hebrew)
 export LANG=en_US.UTF-8 LC_CTYPE="en_US.UTF-8"
+export PATH="/usr/local/opt/curl/bin:$PATH"
