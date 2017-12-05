@@ -47,6 +47,8 @@ filetype on
 au BufNewFile,BufRead *.icss set filetype=css
 au BufNewFile,BufRead *.ts set filetype=typescript.javascript
 au BufNewFile,BufRead *.tsx set filetype=typescript.javascript.jsx
+set wildmenu
+set wildmode=list:longest
 
 "book mode
 au BufRead *.book Book
@@ -133,6 +135,8 @@ nmap <leader>g :NERDTreeTabsFind<CR>
 nmap <C-b> :Buffers<CR>
 nmap ]b :bnext<CR>
 nmap [b :bprev<CR>
+nmap ]n :cn<CR>
+nmap [n :cp<CR>
 
 "jump to module
 nmap <leader>j gdf'gf
@@ -171,6 +175,7 @@ command! Qa qa<bang>
 command! WQ wq<bang>
 command! Wq wq<bang>
 command! WQ wq<bang>
+command! -nargs=1 Dic call SearchWord(<f-args>)
 nmap <F4> :let @* = expand("%:p")<CR>
 nmap <F10> :cn<CR>
 nmap <F11> :cp<CR>
