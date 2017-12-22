@@ -45,10 +45,13 @@ call vundle#end()
 filetype plugin indent on    " required
 filetype on
 au BufNewFile,BufRead *.icss set filetype=css
+au BufNewFile,BufRead *.es6 set filetype=javascript
 au BufNewFile,BufRead *.ts set filetype=typescript.javascript
 au BufNewFile,BufRead *.tsx set filetype=typescript.javascript.jsx
 set wildmenu
 set wildmode=list:longest
+set wildignore+=*/node_modules/*
+set wildignore+=*/.git/*
 
 "book mode
 au BufRead *.book Book
@@ -92,8 +95,8 @@ augroup suffixes
     autocmd!
 
     let associations = [
-                \["typescript", ".ts,.typescript,.tsx"],
-                \]
+        \["typescript.javascript.jsx,typescript.javascript", ".ts,.typescript,.tsx"]
+    \]
 
     for ft in associations
         execute "autocmd FileType " . ft[0] . " setlocal suffixesadd=" . ft[1]
