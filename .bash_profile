@@ -24,7 +24,7 @@ getNpmVersion() {
 }
 
 alias npmver=getNpmVersion
-alias chromenosec="open -a Google\ Chrome --args --disable-web-security --user-data-dir=/foo"
+alias chromenosec="open -a Google\ Chrome --args --disable-web-security --allow-running-insecure-content --ignore-certificate-errors"
 
 killPort() {
     lsof -i tcp:$1 | grep LISTEN | awk '{print $2}' | xargs kill -9
