@@ -35,6 +35,7 @@ alias ntw="npm run test:watchSingle "
 alias yoshitest="./node_modules/mocha/bin/mocha --watch-extensions ts,tsx --watch --recursive --require ~/projects/yoshi/node_modules/yoshi/config/test-setup.js"
 alias npmpublic="npm config set registry https://registry.npmjs.org/"
 alias npmprivate="npm config set registry http://repo.dev.wix/artifactory/api/npm/npm-repos"
+alias npmplease="nvm use && rm -rf node_modules/ && rm -f package-lock.json && npm install"
 
 convertHeb2utf8() {
     iconv -f iso-8859-8 -t utf-8 ${1} > ${2}
