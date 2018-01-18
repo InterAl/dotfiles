@@ -48,6 +48,7 @@ au BufNewFile,BufRead *.icss set filetype=css
 au BufNewFile,BufRead *.es6 set filetype=javascript
 au BufNewFile,BufRead *.ts set filetype=typescript.javascript
 au BufNewFile,BufRead *.tsx set filetype=typescript.javascript.jsx
+au BufNewFile,BufRead *.rt set filetype=html
 set wildmenu
 set wildmode=list:longest
 set wildignore+=*/node_modules/*
@@ -95,7 +96,7 @@ augroup suffixes
     autocmd!
 
     let associations = [
-        \["typescript.javascript.jsx,typescript.javascript", ".ts,.typescript,.tsx"]
+        \["javascript,typescript.javascript.jsx,typescript.javascript", ".es6,.ts,.typescript,.tsx"]
     \]
 
     for ft in associations
@@ -138,6 +139,8 @@ nmap <leader>g :NERDTreeTabsFind<CR>
 nmap <C-b> :Buffers<CR>
 nmap ]b :bnext<CR>
 nmap [b :bprev<CR>
+nmap ]t :tabn<CR>
+nmap [t :tabp<CR>
 nmap ]n :cn<CR>
 nmap [n :cp<CR>
 
