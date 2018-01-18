@@ -1,0 +1,50 @@
+find mob
+cd /Users/alonn/projects/restaurants-dashbaord
+cd /Users/alonn/projects/restaurants-dashboard
+filter cred
+find index
+filter Sess
+filter resta
+filter
+rename
+bulkrename 
+search test
+search mypr
+open_with /App
+search ra
+search .conf
+search movies
+open_with VLC
+open_with vlc
+open_with jkjk
+open_with vi
+open_with Calibre
+vim ~/.confi
+open_with jk
+open_with image
+open_with pre-grohtml
+find road
+find A h
+find A H
+shell  %s
+cd 
+grep Ses
+grep road
+grep Clash
+grep mob
+terminal
+scout *.png
+search png
+search vim
+search erb
+search Down
+search Movies
+delete 
+delete
+
+open_with 
+open_with vim
+search confg
+search config
+search dotfile
+mkdir .config
