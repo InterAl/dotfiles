@@ -1,6 +1,6 @@
 set -o vi
 PS1="\w$ "
-alias ll="ls -la"
+alias ll="ls -lah"
 alias v="vim"
 alias g="git"
 alias gs="git status -s"
@@ -39,6 +39,23 @@ alias npmpublic="npm config set registry https://registry.npmjs.org/"
 alias npmprivate="npm config set registry http://repo.dev.wix/artifactory/api/npm/npm-repos"
 alias npmplease="nvm use && rm -rf node_modules/ && rm -f package-lock.json && npm install"
 alias ranger='ranger --choosedir=$HOME/rangerdir; LASTDIR=`cat $HOME/rangerdir`; cd "$LASTDIR"'
+alias r="ranger"
+alias vi="vim"
+alias btc="curl 'https://www.bitstamp.net/' -H 'Accept-Language: \
+en-US,en;q=0.9,he;q=0.8' -H 'Upgrade-Insecure-Requests: 1' -H 'User-Agent: \
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like \
+Gecko) Chrome/63.0.3239.132 Safari/537.36' -H 'Accept: \
+text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8' \
+-H 'Cookie: \
+visid_incap_99025=qtuDHy9URa+cWMIqoJiRsKF+ZFoAAAAAQUIPAAAAAAB4LzPPURh/UtUZ/tQedbrq; \
+csrftoken=jkSlVTzBDgjMcd7XuihjGu6RTaq3Bboq; \
+nlbi_99025=PpGuMR4ywDM+5Qwz8F1n9AAAAAChyjHdplEf43uIgd1vNI9d; __utmc=209907974; \
+incap_ses_729_99025=sp2aRwP6ww1vA+u+5u0dCiIlZloAAAAARc10XyqAby+IEomlNReVXQ==; \
+incap_ses_253_99025=7k/KF7OfxTAFROdRHdeCA9BZaFoAAAAAgdmlJh6pIXe26LWKJk4dKg==; \
+__utmt=1; __utma=209907974.2021309398.1516535602.1516788326.1516788348.25; \
+__utmz=209907974.1516788348.25.2.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); \
+__utmb=209907974.1.10.1516788348' -H 'Connection: keep-alive' -s | less | grep \
+\"<title>\" | sed 's/		<title>(\(.*\)).*<\/title>/\1/g'"
 
 convertHeb2utf8() {
     iconv -f iso-8859-8 -t utf-8 ${1} > ${2}
@@ -69,3 +86,5 @@ export REACT_EDITOR=vim
 # For weechat (dispaly hebrew)
 export LANG=en_US.UTF-8 LC_CTYPE="en_US.UTF-8"
 export PATH="/usr/local/opt/curl/bin:$PATH"
+
+export GOPATH="/Users/alonn/go"
