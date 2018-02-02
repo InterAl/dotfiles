@@ -198,6 +198,9 @@ nnoremap <silent> zk O<Esc>j
 " <leader>v brings up .vimrc
 noremap <leader>v :e! $MYVIMRC<CR>
 
+imap <C-a> <ESC>I
+imap <C-e> <ESC>A
+
 "CamelCaseMotion
 call camelcasemotion#CreateMotionMappings('\')
 

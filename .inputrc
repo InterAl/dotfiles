@@ -30,6 +30,8 @@ set keymap vi-insert
 Control-l: clear-screen 
 Control-p: history-search-backward
 Control-n: history-search-forward
+Control-a: beginning-of-line
+Control-e: end-of-line
 "\e.":yank-last-arg
 $endif
 
