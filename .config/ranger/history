@@ -1,50 +1,50 @@
-find mob
-cd /Users/alonn/projects/restaurants-dashbaord
-cd /Users/alonn/projects/restaurants-dashboard
-filter cred
-find index
-filter Sess
-filter resta
-filter
-rename
-bulkrename 
-search test
-search mypr
-open_with /App
-search ra
-search .conf
-search movies
-open_with VLC
-open_with vlc
-open_with jkjk
-open_with vi
-open_with Calibre
-vim ~/.confi
-open_with jk
-open_with image
-open_with pre-grohtml
-find road
-find A h
-find A H
-shell  %s
-cd 
-grep Ses
-grep road
-grep Clash
-grep mob
-terminal
-scout *.png
-search png
-search vim
-search erb
-search Down
-search Movies
-delete 
+search saga*ami
+filter saga*ami
+find *saga*
+flat
+search dash
+grep foo
+open_with img
+shell open
+foo
+cd /Users/alonn/dotfiles/
+search Mov
+pwd
+search guild
+search guildw
 delete
+q
+open_with j
+set rnu
+rename 
+rename ssr.js
+echo aa
 
-open_with 
+echo
+bulkrename 
+search mob
+open_with vlc
+filter wix
+filter
+find 
+asjldkfjaslfj
+asjdlfkjsalf
+find
+Q
+search my
+rename SagaForker.js
+open_with kkjk
+search sed
+search grep
+search vi
+search javascript
+search make
+search hay
+open_with vi
 open_with vim
-search confg
-search config
-search dotfile
-mkdir .config
+search irc
+open_with pdf
+open_with 
+search Rea
+search read
+search Pre
