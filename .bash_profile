@@ -1,4 +1,5 @@
 set -o vi
+shopt -s globstar
 PS1="\w$ "
 alias ll="ls -lah"
 alias v="vim"
@@ -56,6 +57,7 @@ __utmt=1; __utma=209907974.2021309398.1516535602.1516788326.1516788348.25; \
 __utmz=209907974.1516788348.25.2.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); \
 __utmb=209907974.1.10.1516788348' -H 'Connection: keep-alive' -s | less | grep \
 \"<title>\" | sed 's/		<title>(\(.*\)).*<\/title>/\1/g'"
+alias youtube="mpsyt"
 
 convertHeb2utf8() {
     iconv -f iso-8859-8 -t utf-8 ${1} > ${2}
