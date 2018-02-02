@@ -30,3 +30,5 @@ Control-p: history-search-backward
 Control-n: history-search-forward
 "\e.":yank-last-arg
 $endif
+
+set keyseq-timeout 0
