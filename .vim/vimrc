@@ -40,6 +40,7 @@ Plugin 'johngrib/vim-game-code-break'
 Plugin 'InterAl/vim-sdcv'
 Plugin 'majutsushi/tagbar'
 Plugin 'AssailantLF/vim-active-numbers'
+Plugin 'tpope/vim-rsi'
 
 call vundle#end()
 filetype plugin indent on    " required
@@ -159,10 +160,10 @@ nnoremap <leader>d :BufOnly<CR>
 vnoremap <C-h> :call RangeJsBeautify()<CR>
 
 if bufwinnr(1)
-  map <Down> <C-W>+
-  map <Up> <C-W>-
-  map <Right> <C-W><
-  map <Left> <C-W>>
+    nnoremap ê <C-W>+
+    nnoremap ë <C-W>-
+    nnoremap ì <C-W><
+    nnoremap è <C-W>>
 endif
 
 function! ToggleSyntax()
@@ -197,9 +198,6 @@ nnoremap <silent> zk O<Esc>j
 
 " <leader>v brings up .vimrc
 noremap <leader>v :e! $MYVIMRC<CR>
-
-imap <C-a> <ESC>I
-imap <C-e> <ESC>A
 
 "CamelCaseMotion
 call camelcasemotion#CreateMotionMappings('\')
