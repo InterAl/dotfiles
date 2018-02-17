@@ -140,6 +140,8 @@ nmap <leader>g :NERDTreeTabsFind<CR>
 nmap <C-b> :Buffers<CR>
 nmap ]b :bnext<CR>
 nmap [b :bprev<CR>
+nmap <C-M-h> :bprev<CR>
+nmap <C-M-l> :bnext<CR>
 nmap ]t :tabn<CR>
 nmap [t :tabp<CR>
 nmap ]n :cn<CR>
