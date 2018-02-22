@@ -117,6 +117,7 @@ set nohls
 set incsearch
 set ignorecase
 set smartcase
+set wrapscan
 
 "tags
 set tags=tags;/
@@ -141,11 +142,14 @@ nmap <C-b> :Buffers<CR>
 nmap ]b :bnext<CR>
 nmap [b :bprev<CR>
 nmap <C-M-h> :bprev<CR>
+nmap <S-M-h> :bprev<CR>
 nmap <C-M-l> :bnext<CR>
+nmap <S-M-l> :bnext<CR>
 nmap ]t :tabn<CR>
 nmap [t :tabp<CR>
 nmap ]n :cn<CR>
 nmap [n :cp<CR>
+nnoremap <bs> <c-^>
 
 "jump to module
 nmap <leader>j gdf'gf
@@ -157,16 +161,8 @@ nmap <C-S-f> :Ack<space>
 map <S-y> "*y
 nmap <leader>p "*p
 nmap <leader><S-p> "*<S-p>
-nnoremap <S-k> "0P
 nnoremap <leader>d :BufOnly<CR>
 vnoremap <C-h> :call RangeJsBeautify()<CR>
-
-if bufwinnr(1)
-    nnoremap ê <C-W>+
-    nnoremap ë <C-W>-
-    nnoremap ì <C-W><
-    nnoremap è <C-W>>
-endif
 
 function! ToggleSyntax()
     if exists("g:syntax_on")
@@ -193,6 +189,18 @@ nmap <F2> :call SearchWord('n')<CR><C-W><C-P>
 vmap <F2> :call SearchWord('v')<CR><C-W><C-P>
 "close the last window
 map <F3> <C-W><C-P><C-W><C-C>
+nmap <C-h> <C-W>h
+nmap <C-l> <C-W>l
+nmap <C-j> <C-W>j
+nmap <C-k> <C-W>k
+nmap <C-c> <C-W>c
+
+if bufwinnr(1)
+    nnoremap ê <C-W>+
+    nnoremap ë <C-W>-
+    nnoremap ì <C-W><
+    nnoremap è <C-W>>
+endif
 
 " open lines in normal mode
 nnoremap <silent> zj o<Esc>k
@@ -220,7 +228,7 @@ let g:UltiSnipsEditSplit="vertical"
 "fzf
 nmap <C-n> :let $FZF_DEFAULT_COMMAND = 'find . -type f -o -path "*/node_modules" -prune -o -path "*/.git" -prune -o -path "*/dist" -prune'<cr>:FZF --reverse<cr>
 nmap <C-t> :let $FZF_DEFAULT_COMMAND = 'find . -type f -o -path "*/.git" -prune'<cr>:FZF --reverse<cr>
-nmap <C-k> :FZFMru --reverse<cr>
+nmap <C-p> :FZFMru --reverse<cr>
 
 "nerd-tree-tabs
 let NERDTreeIgnore=['node_modules']
