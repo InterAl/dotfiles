@@ -17,6 +17,12 @@ Control-l: clear-screen
 "diW": "lBdW"
 "yiW": "lByW"
 "ciW": "lBcW"
+"cib": "lF(lct)"
+"ciB": "lF{lct}"
+"ci[": "lF[lct]"
+"ci]": "lF[lct]"
+"ci\"": "lF\"lct\""
+"ci'": "lF'lct'"
 "gg": beginning-of-history
 "G": end-of-history
 "\e": ""
