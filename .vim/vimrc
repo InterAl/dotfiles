@@ -228,9 +228,11 @@ let g:UltiSnipsJumpBackwardTrigger="<c-x>"
 let g:UltiSnipsEditSplit="vertical"
 
 "fzf
-nmap <C-n> :let $FZF_DEFAULT_COMMAND = 'find . -type f -o -path "*/node_modules" -prune -o -path "*/.git" -prune -o -path "*/dist" -prune'<cr>:FZF --reverse --history ~/.vim/plugin/fzf_history<cr>
-nmap <C-t> :let $FZF_DEFAULT_COMMAND = 'find . -type f -o -path "*/.git" -prune'<cr>:FZF --reverse --history ~/.vim/plugin/fzf_history<cr>
-nmap <C-p> :FZFMru --reverse --history ~/.vim/plugin/fzf_history<cr>
+let fzf_history_file = getcwd() . '/' . '.fzf_history'
+call system('touch ' . fzf_history_file)
+execute 'nmap <C-n> :let $FZF_DEFAULT_COMMAND = ''find . -type f -o -path "*/node_modules" -prune -o -path "*/.git" -prune -o -path "*/dist" -prune''<cr>:FZF --reverse --history ' . fzf_history_file . '<cr>'
+execute 'nmap <C-t> :let $FZF_DEFAULT_COMMAND = ''find . -type f -o -path "*/.git" -prune''<cr>:FZF --reverse --history ' . fzf_history_file . '<cr>'
+execute 'nmap <C-p> :FZFMru --reverse --history ' . fzf_history_file . '<cr>'
 
 "nerd-tree-tabs
 let NERDTreeIgnore=['node_modules']
