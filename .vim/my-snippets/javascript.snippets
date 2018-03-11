@@ -260,3 +260,7 @@ endsnippet
 snippet bind
 this.${1} = this.$1.bind(this);
 endsnippet
+
+snippet wait
+await (new Promise(resolve => setTimeout(resolve, ${1:10000})));
+endsnippet
