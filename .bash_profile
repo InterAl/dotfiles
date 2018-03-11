@@ -27,6 +27,7 @@ getNpmVersion() {
 
 alias npmver=getNpmVersion
 alias chromenosec="open -a Google\ Chrome --args --disable-web-security --allow-running-insecure-content --ignore-certificate-errors"
+alias chromenocert="open -a Google\ Chrome --args --ignore-certificate-errors"
 
 killPort() {
     lsof -i tcp:$1 | grep LISTEN | awk '{print $2}' | xargs kill -9
@@ -59,6 +60,12 @@ __utmz=209907974.1516788348.25.2.utmcsr=google|utmccn=(organic)|utmcmd=organic|u
 __utmb=209907974.1.10.1516788348' -H 'Connection: keep-alive' -s | less | grep \
 \"<title>\" | sed 's/		<title>(\(.*\)).*<\/title>/\1/g'"
 alias youtube="mpsyt"
+alias openfiles="lsof | awk 'NR>1{arr[$1]++}END{for (a in arr) print a, arr[a]}' | sort -nk2"
+
+queryMorfix() {
+    curl -s www.morfix.co.il/${1} | grep "translation translation_he heTrans" | sed 's/<div.*>\(.*\)<\/div>/\1/g' | rev
+}
+alias morfix=queryMorfix
 
 convertHeb2utf8() {
     iconv -f iso-8859-8 -t utf-8 ${1} > ${2}
