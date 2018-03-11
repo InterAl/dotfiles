@@ -195,7 +195,6 @@ nmap <C-h> <C-W>h
 nmap <C-l> <C-W>l
 nmap <C-j> <C-W>j
 nmap <C-k> <C-W>k
-nmap <C-c> <C-W>c
 
 if bufwinnr(1)
     nnoremap ê <C-W>+
