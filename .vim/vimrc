@@ -75,6 +75,7 @@ syntax enable
 set rnu
 let mapleader=" "
 set textwidth=80
+set formatoptions-=t
 set nowrap
 set colorcolumn=+1
 set ruler " show cursor position in status bar
