@@ -62,11 +62,7 @@ __utmz=209907974.1516788348.25.2.utmcsr=google|utmccn=(organic)|utmcmd=organic|u
 __utmb=209907974.1.10.1516788348' -H 'Connection: keep-alive' -s | less | grep \
 \"<title>\" | sed 's/		<title>(\(.*\)).*<\/title>/\1/g'"
 alias youtube="mpsyt"
-openFiles() {
-    lsof | awk 'NR>1{arr[$1]++}END{for (a in arr) print a, arr[a]}' | sort -nk2
-}
-alias openfiles=openFiles
-
+alias openfiles=~/dotfiles/scripts/openfiles.sh
 alias morfix=~/dotfiles/scripts/morfix.sh
 
 convertHeb2utf8() {
