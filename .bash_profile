@@ -20,6 +20,7 @@ alias runmocha="mocha --watch --require spec/setup.js"
 alias sourcebash="source ~/.bash_profile"
 alias vgl="git log --graph --pretty=format:'%h - %d %s (%cr) <%an>' | vim -R -c 'set filetype=git nowrap' -"
 stty -echoctl #prevent echoing ^C-c to terminal
+stty -ixon #allow c-s to forward-search in terminal
 bind -x '"\C-\e41": clear;'
 
 getNpmVersion() {
@@ -66,10 +67,7 @@ openFiles() {
 }
 alias openfiles=openFiles
 
-queryMorfix() {
-    curl -s www.morfix.co.il/${1} | grep "translation translation_he heTrans" | sed 's/<div.*>\(.*\)<\/div>/\1/g' | rev
-}
-alias morfix=queryMorfix
+alias morfix=~/dotfiles/scripts/morfix.sh
 
 convertHeb2utf8() {
     iconv -f iso-8859-8 -t utf-8 ${1} > ${2}
