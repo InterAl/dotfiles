@@ -63,7 +63,8 @@ __utmb=209907974.1.10.1516788348' -H 'Connection: keep-alive' -s | less | grep \
 \"<title>\" | sed 's/		<title>(\(.*\)).*<\/title>/\1/g'"
 alias youtube="mpsyt"
 alias openfiles=~/dotfiles/scripts/openfiles.sh
-alias morfix=~/dotfiles/scripts/morfix.sh
+alias morfixweb=~/dotfiles/scripts/morfix.sh
+alias morfix=~/dotfiles/scripts/morfixapi.sh
 
 convertHeb2utf8() {
     iconv -f iso-8859-8 -t utf-8 ${1} > ${2}
@@ -96,3 +97,4 @@ export LANG=en_US.UTF-8 LC_CTYPE="en_US.UTF-8"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 
 export GOPATH="/Users/alonn/go"
+export BC_ENV_ARGS=$HOME/.bc
