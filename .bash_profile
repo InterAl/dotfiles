@@ -64,7 +64,8 @@ __utmb=209907974.1.10.1516788348' -H 'Connection: keep-alive' -s | less | grep \
 alias youtube="mpsyt"
 alias openfiles=~/dotfiles/scripts/openfiles.sh
 alias morfixweb=~/dotfiles/scripts/morfix.sh
-alias morfix=~/dotfiles/scripts/morfixapi.sh
+alias morfixapi=~/dotfiles/scripts/morfixapi.sh
+alias morfix=morfixweb
 
 convertHeb2utf8() {
     iconv -f iso-8859-8 -t utf-8 ${1} > ${2}
@@ -91,6 +92,7 @@ export PATH
 export INPUTRC="~/.inputrc"
 
 export REACT_EDITOR=vim
+export EDITOR=vim
 
 # For weechat (dispaly hebrew)
 export LANG=en_US.UTF-8 LC_CTYPE="en_US.UTF-8"
