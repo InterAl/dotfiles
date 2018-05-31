@@ -99,4 +99,4 @@ export LANG=en_US.UTF-8 LC_CTYPE="en_US.UTF-8"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 
 export GOPATH="/Users/alonn/go"
-export BC_ENV_ARGS=$HOME/.bc
+export BC_ENV_ARGS="-q $HOME/.bc"
