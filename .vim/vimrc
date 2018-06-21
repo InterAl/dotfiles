@@ -155,6 +155,7 @@ nmap [n :cp<CR>
 nnoremap <bs> <c-^>
 nmap <C-M-O> :BufSurfBack<CR>
 nmap <C-M-I> :BufSurfForward<CR>
+cmap w!! w !sudo tee % >/dev/null
 
 "jump to module
 nmap <leader>j gdf'gf
