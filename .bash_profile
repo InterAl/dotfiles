@@ -19,6 +19,7 @@ alias gpull="git pull --rebase"
 alias runmocha="mocha --watch --require spec/setup.js"
 alias sourcebash="source ~/.bash_profile"
 alias vgl="git log --graph --pretty=format:'%h - %d %s (%cr) <%an>' | vim -R -c 'set filetype=git nowrap' -"
+alias stashandpush="g stash && gpull && gpush && g stash pop"
 stty -echoctl #prevent echoing ^C-c to terminal
 stty -ixon #allow c-s to forward-search in terminal
 bind -x '"\C-\e41": clear;'
