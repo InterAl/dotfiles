@@ -19,6 +19,7 @@ alias gpull="git pull --rebase"
 alias runmocha="mocha --watch --require spec/setup.js"
 alias sourcebash="source ~/.bash_profile"
 alias vgl="git log --graph --pretty=format:'%h - %d %s (%cr) <%an>' | vim -R -c 'set filetype=git nowrap' -"
+alias glp="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset'"
 alias stashandpush="g stash && gpull && gpush && g stash pop"
 stty -echoctl #prevent echoing ^C-c to terminal
 stty -ixon #allow c-s to forward-search in terminal
@@ -43,6 +44,8 @@ alias yoshitest="./node_modules/mocha/bin/mocha --watch-extensions ts,tsx --watc
 alias santatest="node $NODE_DEBUG_OPTION --max_old_space_size=4096 js/test/jasmine.js --group packages "
 alias npmpublic="npm config set registry https://registry.npmjs.org/"
 alias npmprivate="npm config set registry http://repo.dev.wix/artifactory/api/npm/npm-repos"
+alias yarnpublic="yarn config set registry https://registry.npmjs.org/"
+alias yarnprivate="yarn config set registry http://repo.dev.wix/artifactory/api/npm/npm-repos"
 alias npmplease="nvm use && rm -rf node_modules/ && rm -f package-lock.json && npm install"
 alias ranger='ranger --choosedir=$HOME/rangerdir; LASTDIR=`cat $HOME/rangerdir`; cd "$LASTDIR"'
 alias r="ranger"
