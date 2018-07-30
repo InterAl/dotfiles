@@ -163,6 +163,9 @@ nmap <leader>j gdf'gf
 "find word usages (under cursor)
 nmap <leader>u yiw:Ack <C-r>"<CR>
 
+"delete __log
+command! Rmlog :norm df)ds)
+
 nmap <C-S-f> :Ack<space>
 map <S-y> "*y
 nmap <leader>p "*p
