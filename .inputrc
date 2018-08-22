@@ -36,6 +36,7 @@ Control-n: history-search-forward
 Control-a: beginning-of-line
 Control-e: end-of-line
 "\e.":yank-last-arg
+"\C-x\C-e": edit-and-execute-command
 $endif
 
 set keyseq-timeout 0
