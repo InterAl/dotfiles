@@ -9,3 +9,4 @@ node_modules/
 .fzf_history
 .DS_Store
 bin/
+.sass-cache/
