@@ -10,3 +10,4 @@ node_modules/
 .DS_Store
 bin/
 .sass-cache/
+.watchmanconfig
