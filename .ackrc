@@ -8,11 +8,15 @@
 --ignore-file=is:yarn.lock
 --ignore-file=is:package.lock
 --ignore-file=is:package-lock.json
+--ignore-file=is:restaurantsListStub.json
 --ignore-dir=coverage
 --ignore-dir=assets
 --ignore-dir=build
 --ignore-dir=android
 --ignore-dir=ios
+--ignore-dir=dist/
 --ignore-dir=dist
 --ignore-dir=public
 --ignore-dir=target
+
+--ignore-dir=Users/alonn/projects/restaurants/wix-restaurants-olo-service/src/main/resources
