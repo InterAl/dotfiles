@@ -24,7 +24,7 @@ Plugin 'kshenoy/vim-signature'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-dispatch'
-Plugin 'henrik/vim-indexed-search'
+" Plugin 'henrik/vim-indexed-search' # buggy - shift n...
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'altercation/vim-colors-solarized'
 " Plugin 'leafgarland/typescript-vim'
@@ -40,7 +40,13 @@ Plugin 'majutsushi/tagbar'
 " Plugin 'AssailantLF/vim-active-numbers'
 Plugin 'tpope/vim-rsi'
 Plugin 'ton/vim-bufsurf'
+" Plugin 'ensime/ensime-vim'
 Plugin 'junegunn/goyo.vim'
+" Plugin 'eclim'
+" Plugin 'autozimu/LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"     \ 'do': 'bash install.sh',
+"     \ }
 
 call vundle#end()
 filetype plugin indent on    " required
@@ -132,6 +138,9 @@ command! Uptag exec "!ctags -R " . getcwd()
 set scrolloff=0         "Start scrolling when we're 0 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
+set mouse=a
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
 
 "buffers
 set hidden
@@ -166,6 +175,8 @@ nmap <leader>u yiw:Ack <C-r>"<CR>
 
 "delete __log
 command! Rmlog :norm df)ds)
+
+" command! ToRelative :!realpath --relative-to=%:p<CR>
 
 nmap <C-S-f> :Ack<space>
 map <S-y> "*y
@@ -240,6 +251,7 @@ call system('touch ' . fzf_history_file)
 execute 'nmap <C-n> :let $FZF_DEFAULT_COMMAND = ''find . -type f -o -path "*/node_modules" -prune -o -path "*/.git" -prune -o -path "*/dist" -prune''<cr>:FZF --reverse --history ' . fzf_history_file . '<cr>'
 execute 'nmap <C-t> :let $FZF_DEFAULT_COMMAND = ''find . -type f -o -path "*/.git" -prune''<cr>:FZF --reverse --history ' . fzf_history_file . '<cr>'
 execute 'nmap <C-p> :FZFMru --reverse --history ' . fzf_history_file . '<cr>'
+" execute 'nmap <C-p> :History --reverse --history <cr>'
 
 "nerd-tree-tabs
 let NERDTreeIgnore=['node_modules']
@@ -294,3 +306,12 @@ set errorformat=%+A\ %#%f\ %#(%l\\\,%c):\ %m,%C%m
 "ack.vim
 let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:ack_mappings = { "H": "", "h": "" }
+
+"LanguageClient-neovim
+" let g:LanguageClient_serverCommands = {
+"     \ 'scala': [''],
+"     \ }
+"
+" set omnifunc=syntaxcomplete#Complete
+" set completefunc=syntaxcomplete#Complete
+" let g:EclimCompletionMethod = 'omnifunc'
