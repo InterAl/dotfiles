@@ -8,8 +8,8 @@ alias gs="git status -s"
 alias ga="git add ."
 alias gr="git reset"
 alias gst="git status"
-alias gl="git log --d --graph --all"
-alias gld="git log --d --graph"
+alias gl="git log --decorate --graph --all"
+alias gld="git log --decorate --graph"
 alias gci="git commit"
 alias gco="git checkout"
 alias gd="git diff"
@@ -21,6 +21,9 @@ alias sourcebash="source ~/.bash_profile"
 alias vgl="git log --graph --pretty=format:'%h - %d %s (%cr) <%an>' | vim -R -c 'set filetype=git nowrap' -"
 alias glp="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset'"
 alias stashandpush="g stash && gpull && gpush && g stash pop"
+alias iphone="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
+alias resetsound="sudo killall coreaudiod"
+alias vim_clean="vim -u NONE -c 'set nocompatible'"
 stty -echoctl #prevent echoing ^C-c to terminal
 stty -ixon #allow c-s to forward-search in terminal
 bind -x '"\C-\e41": clear;'
@@ -47,6 +50,7 @@ alias npmprivate="npm config set registry http://repo.dev.wix/artifactory/api/np
 alias yarnpublic="yarn config set registry https://registry.npmjs.org/"
 alias yarnprivate="yarn config set registry http://repo.dev.wix/artifactory/api/npm/npm-repos"
 alias npmplease="nvm use && rm -rf node_modules/ && rm -f package-lock.json && npm install"
+alias npmpleasenonvm="rm -rf node_modules/ && rm -f package-lock.json && npm install"
 alias ranger='ranger --choosedir=$HOME/rangerdir; LASTDIR=`cat $HOME/rangerdir`; cd "$LASTDIR"'
 alias r="ranger"
 alias vi="vim"
@@ -70,6 +74,8 @@ alias openfiles=~/dotfiles/scripts/openfiles.sh
 alias morfixweb=~/dotfiles/scripts/morfix.sh
 alias morfixapi=~/dotfiles/scripts/morfixapi.sh
 alias morfix=morfixweb
+alias eclimd="~/eclipse/java-photon/Eclipse.app/Contents/Eclipse/eclimd"
+alias mvndeps="mvn dependency:tree -Doutput=deps"
 
 convertHeb2utf8() {
     iconv -f iso-8859-8 -t utf-8 ${1} > ${2}
@@ -91,6 +97,7 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 PATH="~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:${PATH}"
 PATH="/Applications/Postgres.app/Contents/Versions/9.6/bin:${PATH}"
 PATH="~/google-cloud-sdk/bin:${PATH}"
+PATH="~/apache-maven-3.5.4/bin:${PATH}"
 export PATH
 
 export INPUTRC="~/.inputrc"
