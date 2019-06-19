@@ -7,8 +7,8 @@ i=$startIdx
 mkdir -p $folderPath
 
 while [ $i -le $endIdx ]; do
-    path=${folderPath}/${i}.pdf
+    path=${folderPath}/${i}.gif
     echo ${path}
-    curl -o ${path} "https://babel.hathitrust.org/cgi/imgsrv/download/pdf?id=mdp.39015046801760;orient=0;size=100;seq=${i};attachment=0"
+    curl -o ${path} "http://www.takelifeback.com/moltz/${i}.gif"
     let i=i+1
 done
