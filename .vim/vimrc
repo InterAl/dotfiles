@@ -24,9 +24,9 @@ Plugin 'kshenoy/vim-signature'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-dispatch'
-" Plugin 'henrik/vim-indexed-search' # buggy - shift n...
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'google/vim-searchindex'
 " Plugin 'leafgarland/typescript-vim'
 Plugin 'vimwiki/vimwiki'
 Plugin 'w0rp/ale'
@@ -37,10 +37,8 @@ Plugin 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'InterAl/vim-sdcv'
 Plugin 'majutsushi/tagbar'
-" Plugin 'AssailantLF/vim-active-numbers'
 Plugin 'tpope/vim-rsi'
 Plugin 'ton/vim-bufsurf'
-" Plugin 'ensime/ensime-vim'
 Plugin 'junegunn/goyo.vim'
 " Plugin 'eclim'
 " Plugin 'autozimu/LanguageClient-neovim', {
@@ -68,10 +66,16 @@ command! Book call SetBook()
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 function! SetBook()
-    set foldcolumn=2
+    set foldcolumn=3
     set nornu
     set scrolloff=0
-    set cursorline
+    set nosmartindent
+    set textwidth=60
+    map <C-F> <PageDown>
+    map <C-B> <PageUp>
+    map <leader>h :set t_ve=<CR>
+    map <leader>s :set t_ve&<CR>
+    set showtabline=0
 endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -151,7 +155,6 @@ nmap <leader>b :cp<CR>
 nmap <leader>t :NERDTreeTabsToggle<CR>
 nmap <leader>r :source ~/.vim/vimrc<CR>
 nmap <leader>g :NERDTreeTabsFind<CR>
-nmap <C-b> :Buffers<CR>
 nmap ]b :bnext<CR>
 nmap [b :bprev<CR>
 nmap <C-M-h> :bprev<CR>
@@ -214,6 +217,10 @@ nmap <C-h> <C-W>h
 nmap <C-l> <C-W>l:redraw!<CR>
 nmap <C-j> <C-W>j
 nmap <C-k> <C-W>k
+
+"scrolls a full page - by default vim scrolls a full page - 2
+nmap <PageDown> <S-Down><C-E><C-E>H
+nmap <PageUp> <S-Up><C-Y><C-Y>H
 
 if bufwinnr(1)
     nnoremap ê <C-W>+
@@ -306,6 +313,9 @@ set errorformat=%+A\ %#%f\ %#(%l\\\,%c):\ %m,%C%m
 "ack.vim
 let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:ack_mappings = { "H": "", "h": "" }
+
+"vim-indexed-search
+let g:indexed_search_n_always_searches_forward = 0
 
 "LanguageClient-neovim
 " let g:LanguageClient_serverCommands = {
