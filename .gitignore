@@ -13,3 +13,10 @@ bin/
 .watchmanconfig
 fbtest.js
 credentials.json
+bundle.js
+*.bundle.js
+*.min.js
+*.js.map
+common.bundle.*
+common.react16.bundle*
+dist/
