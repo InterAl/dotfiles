@@ -14,7 +14,6 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'mxw/vim-jsx'
 Plugin 'surround.vim'
 Plugin 'mileszs/ack.vim'
-Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'InterAl/tcomment_vim'
@@ -28,7 +27,6 @@ Plugin 'bkad/CamelCaseMotion'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'google/vim-searchindex'
 " Plugin 'leafgarland/typescript-vim'
-Plugin 'vimwiki/vimwiki'
 Plugin 'w0rp/ale'
 Plugin 'tpope/vim-repeat'
 Plugin 'ap/vim-buftabline'
@@ -37,7 +35,7 @@ Plugin 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'InterAl/vim-sdcv'
 Plugin 'majutsushi/tagbar'
-Plugin 'tpope/vim-rsi'
+" Plugin 'tpope/vim-rsi' #breaks c-d in insert mode :\
 Plugin 'ton/vim-bufsurf'
 Plugin 'junegunn/goyo.vim'
 " Plugin 'eclim'
@@ -273,6 +271,7 @@ let g:ycm_register_as_syntastic_checker = 0
 nnoremap <leader>fd :YcmCompleter GoToType<CR>
 nnoremap <leader>fp :YcmCompleter GetDoc<CR>
 nnoremap <leader>ff :YcmCompleter GetType<CR>
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_global_ycm_extra_conf'
 
 "vim-dispatch
 autocmd FileType javascript let b:dispatch = 'mocha --watch --compilers js:babel-register --require ignore-styles --require spec/jsdomSetup.js'
