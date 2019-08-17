@@ -1,4 +1,6 @@
 --ignore-file=match:-.bundle.js
+--ignore-file=is:bundle.js
+--ignore-file=match:-.min.js
 --ignore-file=match:-.tsv
 --ignore-file=match:-.log
 --ignore-file=ext:log

@@ -20,3 +20,4 @@ bundle.js
 common.bundle.*
 common.react16.bundle*
 dist/
+*.css.map
