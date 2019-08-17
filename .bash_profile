@@ -74,6 +74,7 @@ alias openfiles=~/dotfiles/scripts/openfiles.sh
 alias morfixweb=~/dotfiles/scripts/morfix.sh
 alias morfixapi=~/dotfiles/scripts/morfixapi.sh
 alias morfix=morfixweb
+alias m=morfix
 alias eclimd="~/eclipse/java-photon/Eclipse.app/Contents/Eclipse/eclimd"
 alias mvndeps="mvn dependency:tree -Doutput=deps"
 
