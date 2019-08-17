@@ -2,49 +2,48 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=~/.fzf
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'pbogut/fzf-mru.vim'
-Plugin 'junegunn/fzf.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'mxw/vim-jsx'
-Plugin 'surround.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'InterAl/tcomment_vim'
-Plugin 'Raimondi/delimitMate'
-Plugin 'moll/vim-node'
-Plugin 'kshenoy/vim-signature'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'tpope/vim-dispatch'
-Plugin 'bkad/CamelCaseMotion'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'google/vim-searchindex'
-" Plugin 'leafgarland/typescript-vim'
-Plugin 'w0rp/ale'
-Plugin 'tpope/vim-repeat'
-Plugin 'ap/vim-buftabline'
-" Plugin 'YankRing.vim'
-Plugin 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
-Plugin 'maksimr/vim-jsbeautify'
-Plugin 'InterAl/vim-sdcv'
-Plugin 'majutsushi/tagbar'
-" Plugin 'tpope/vim-rsi' #breaks c-d in insert mode :\
-Plugin 'ton/vim-bufsurf'
-Plugin 'junegunn/goyo.vim'
-" Plugin 'eclim'
-" Plugin 'autozimu/LanguageClient-neovim', {
+call plug#begin('~/.vim/plugged')
+Plug 'pbogut/fzf-mru.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'mxw/vim-jsx'
+Plug 'tpope/vim-surround'
+Plug 'mileszs/ack.vim'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'InterAl/tcomment_vim'
+Plug 'Raimondi/delimitMate'
+Plug 'moll/vim-node'
+Plug 'kshenoy/vim-signature'
+Plug 'digitaltoad/vim-jade'
+Plug 'Valloric/YouCompleteMe'
+Plug 'tpope/vim-dispatch'
+Plug 'bkad/CamelCaseMotion'
+Plug 'altercation/vim-colors-solarized'
+Plug 'google/vim-searchindex'
+" Plug 'leafgarland/typescript-vim'
+Plug 'w0rp/ale'
+Plug 'tpope/vim-repeat'
+Plug 'ap/vim-buftabline'
+" Plug 'YankRing.vim'
+Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
+Plug 'maksimr/vim-jsbeautify'
+Plug 'InterAl/vim-sdcv'
+Plug 'majutsushi/tagbar'
+" Plug 'tpope/vim-rsi' #breaks c-d in insert mode :\
+Plug 'ton/vim-bufsurf'
+Plug 'junegunn/goyo.vim'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'eclim'
+" Plug 'autozimu/LanguageClient-neovim', {
 "     \ 'branch': 'next',
 "     \ 'do': 'bash install.sh',
 "     \ }
+call plug#end()
 
-call vundle#end()
 filetype plugin indent on    " required
 filetype on
 au BufNewFile,BufRead *.icss set filetype=css
@@ -324,3 +323,7 @@ let g:indexed_search_n_always_searches_forward = 0
 " set omnifunc=syntaxcomplete#Complete
 " set completefunc=syntaxcomplete#Complete
 " let g:EclimCompletionMethod = 'omnifunc'
+"
+
+"coc.nvim
+" nmap <silent> gd <Plug>(coc-definition)
