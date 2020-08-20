@@ -92,7 +92,7 @@ set statusline=%f%r%h\ %m\ %=\ %l,%c\ \|\ %p%%\ \|\ %L
 set showmode
 set noequalalways
 " set cursorline
-set re=1 "old regexp engine - faster syntax parsing?
+" set re=1 "old regexp engine - faster syntax parsing? not for typescript, apparently!
 
 "colors
 set background=dark
