@@ -15,7 +15,7 @@ alias gco="git checkout"
 alias gd="git diff"
 alias gdi="git diff --cached"
 alias gpush="git push origin head"
-alias gpull="git pull --rebase"
+alias gpull="git pull origin HEAD --rebase"
 alias runmocha="mocha --watch --require spec/setup.js"
 alias sourcebash="source ~/.bash_profile"
 alias vgl="git log --graph --pretty=format:'%h - %d %s (%cr) <%an>' | vim -R -c 'set filetype=git nowrap' -"
@@ -46,10 +46,10 @@ alias jtw="./node_modules/jest-cli/bin/jest.js --watch "
 alias yoshitest="./node_modules/mocha/bin/mocha --watch-extensions ts,tsx --watch --recursive --require ~/projects/yoshi/node_modules/yoshi/config/test-setup.js"
 alias santatest="node $NODE_DEBUG_OPTION --max_old_space_size=4096 js/test/jasmine.js --group packages "
 alias npmpublic="npm config set registry https://registry.npmjs.org/"
-alias npmprivate="npm config set registry http://repo.dev.wix/artifactory/api/npm/npm-repos"
+alias npmprivate="npm config set registry http://npm.dev.wixpress.com/"
 alias yarnpublic="yarn config set registry https://registry.npmjs.org/"
 alias yarnprivate="yarn config set registry http://repo.dev.wix/artifactory/api/npm/npm-repos"
-alias npmplease="nvm use && rm -rf node_modules/ && rm -f package-lock.json && npm install"
+alias npmplease="nvm use && rm -rf node_modules/ && rm -f package-lock.json && node --max_old_space_size=8000 $(which npm) install"
 alias npmpleasenonvm="rm -rf node_modules/ && rm -f package-lock.json && npm install"
 alias ranger='ranger --choosedir=$HOME/rangerdir; LASTDIR=`cat $HOME/rangerdir`; cd "$LASTDIR"'
 alias r="ranger"
@@ -92,6 +92,7 @@ alias printcolors="for i in {0..255}; do   printf \"\x1b[38;5;${i}mcolour${i}\x1
 
 export NVM_DIR="/Users/alonn/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export NVM_NODEJS_ORG_MIRROR=http://nodejs.org/dist
 
 # PATH
 export ANDROID_HOME=/usr/local/opt/android-sdk
@@ -112,3 +113,8 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 
 export GOPATH="/Users/alonn/go"
 export BC_ENV_ARGS="-q $HOME/.bc"
+
+# Setting PATH for Python 3.7
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
+export PATH

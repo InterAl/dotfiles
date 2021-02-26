@@ -1,7 +1,6 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
+" filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
 set rtp+=~/.fzf
 call plug#begin('~/.vim/plugged')
 Plug 'pbogut/fzf-mru.vim'
@@ -25,14 +24,14 @@ Plug 'bkad/CamelCaseMotion'
 Plug 'altercation/vim-colors-solarized'
 Plug 'google/vim-searchindex'
 " Plug 'leafgarland/typescript-vim'
-Plug 'w0rp/ale'
+Plug 'InterAl/ale'
 Plug 'tpope/vim-repeat'
 Plug 'ap/vim-buftabline'
 " Plug 'YankRing.vim'
 Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 Plug 'maksimr/vim-jsbeautify'
 Plug 'InterAl/vim-sdcv'
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 " Plug 'tpope/vim-rsi' #breaks c-d in insert mode :\
 Plug 'ton/vim-bufsurf'
 Plug 'junegunn/goyo.vim'
@@ -213,11 +212,11 @@ vmap <F2> :call SearchWord('v')<CR><C-W><C-P>
 "close the last window
 map <F3> <C-W><C-P><C-W><C-C>
 nmap <C-h> <C-W>h
-nmap <C-l> <C-W>l:redraw!<CR>
+nmap <C-l> <C-W>l<CR>
 nmap <C-j> <C-W>j
 nmap <C-k> <C-W>k
 
-"scrolls a full page - by default vim scrolls a full page - 2
+"scrolls a full page - by default vim scrolls a full page minus 2 lines
 nmap <PageDown> <S-Down><C-E><C-E>H
 nmap <PageUp> <S-Up><C-Y><C-Y>H
 
@@ -235,14 +234,13 @@ nnoremap <silent> zk O<Esc>j
 " <leader>v brings up .vimrc
 noremap <leader>v :e! $MYVIMRC<CR>
 
+noremap <leader>l :redraw<CR>
+
 "CamelCaseMotion
 call camelcasemotion#CreateMotionMappings('\')
 
 "jsx
 let g:jsx_ext_required = 0
-
-"Syntastic
-" let g:syntastic_javascript_checkers = ['eslint']
 
 "UltiSnips
 let g:UltiSnipsSnippetsDir="~/.vim/plugged/ultisnips"
@@ -294,6 +292,7 @@ let g:ale_sign_error = '>'
 
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
+nnoremap <leader>fi :ALEFix<CR>
 
 "YankRing
 " this is so that single char deletes don't end up in the yankring
@@ -314,9 +313,6 @@ set errorformat=%+A\ %#%f\ %#(%l\\\,%c):\ %m,%C%m
 "ack.vim
 let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:ack_mappings = { "H": "", "h": "" }
-
-"vim-indexed-search
-let g:indexed_search_n_always_searches_forward = 0
 
 "LanguageClient-neovim
 " let g:LanguageClient_serverCommands = {
@@ -374,5 +370,15 @@ function! s:show_documentation()
   endif
 endfunction
 
+let g:coc_global_extensions = [
+            \ 'coc-json',
+            \ 'coc-tsserver',
+            \ 'coc-html',
+            \ 'coc-css',
+            \ 'coc-ultisnips'
+            \ ]
+
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
+nnoremap <leader>cf :CocFix<CR>
+nmap <leader>oi :call CocAction('runCommand', 'tsserver.organizeImports')<CR>
