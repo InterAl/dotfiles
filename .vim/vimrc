@@ -12,7 +12,7 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'mxw/vim-jsx'
 Plug 'tpope/vim-surround'
 Plug 'mileszs/ack.vim'
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'InterAl/tcomment_vim'
 Plug 'Raimondi/delimitMate'
@@ -222,10 +222,10 @@ nmap <PageDown> <S-Down><C-E><C-E>H
 nmap <PageUp> <S-Up><C-Y><C-Y>H
 
 if bufwinnr(1)
-    nnoremap ê <C-W>+
-    nnoremap ë <C-W>-
-    nnoremap ì <C-W><
-    nnoremap è <C-W>>
+    nnoremap ∆ <C-W>+
+    nnoremap ˚ <C-W>-
+    nnoremap ˙ <C-W><
+    nnoremap ¬ <C-W>>
 endif
 
 " open lines in normal mode
