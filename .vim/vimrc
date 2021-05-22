@@ -91,7 +91,7 @@ set statusline=%f%r%h\ %m\ %=\ %l,%c\ \|\ %p%%\ \|\ %L
 set showmode
 set noequalalways
 " set cursorline
-set re=1 "old regexp engine - faster syntax parsing?
+"set re=1 "old regexp engine - faster syntax parsing?
 
 "colors
 set background=dark
@@ -378,6 +378,10 @@ let g:coc_global_extensions = [
             \ 'coc-ultisnips'
             \ ]
 
+let g:coc_filetype_map = {
+  \ 'typescript.javascript': 'typescript',
+  \ 'typescript.javascript.jsx': 'typescript'
+  \ }
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
 nnoremap <leader>cf :CocFix<CR>
