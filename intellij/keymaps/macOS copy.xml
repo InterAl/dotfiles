@@ -1,0 +1,86 @@
+<keymap version="1" name="macOS copy" parent="Mac OS X 10.5+">
+  <action id="ChangesView.GroupBy.Directory" />
+  <action id="ChangesView.GroupBy.Module" />
+  <action id="ChangesView.ShelveSilently" />
+  <action id="CodeCompletion">
+    <keyboard-shortcut first-keystroke="ctrl p" />
+  </action>
+  <action id="Console.TableResult.ColumnVisibility" />
+  <action id="EditorChooseLookupItem">
+    <keyboard-shortcut first-keystroke="enter" />
+    <keyboard-shortcut first-keystroke="ctrl m" />
+  </action>
+  <action id="EditorCutLineEnd" />
+  <action id="EditorDown">
+    <keyboard-shortcut first-keystroke="down" />
+    <keyboard-shortcut first-keystroke="ctrl j" />
+  </action>
+  <action id="EditorLeft">
+    <keyboard-shortcut first-keystroke="left" />
+    <keyboard-shortcut first-keystroke="ctrl b" />
+    <keyboard-shortcut first-keystroke="ctrl h" />
+  </action>
+  <action id="EditorLeftWithSelection" />
+  <action id="EditorMatchBrace" />
+  <action id="EditorRight">
+    <keyboard-shortcut first-keystroke="right" />
+    <keyboard-shortcut first-keystroke="ctrl f" />
+    <keyboard-shortcut first-keystroke="ctrl l" />
+  </action>
+  <action id="EditorUp">
+    <keyboard-shortcut first-keystroke="up" />
+    <keyboard-shortcut first-keystroke="ctrl k" />
+  </action>
+  <action id="ExportToTextFile" />
+  <action id="FullyExpandTreeNode">
+    <keyboard-shortcut first-keystroke="ctrl o" />
+  </action>
+  <action id="GotoBookmark8" />
+  <action id="GuiDesigner.CreateListener" />
+  <action id="GuiDesigner.QuickJavadoc">
+    <keyboard-shortcut first-keystroke="f1" />
+    <mouse-shortcut keystroke="control button2" />
+  </action>
+  <action id="Macro.resize-editor-left">
+    <keyboard-shortcut first-keystroke="shift meta h" />
+  </action>
+  <action id="Macro.resize-editor-right">
+    <keyboard-shortcut first-keystroke="shift meta l" />
+  </action>
+  <action id="MethodHierarchy" />
+  <action id="MethodHierarchy.OverrideMethodAction" />
+  <action id="NavBar-return">
+    <keyboard-shortcut first-keystroke="enter" />
+  </action>
+  <action id="OverrideMethods" />
+  <action id="PopupMenu-return">
+    <keyboard-shortcut first-keystroke="enter" />
+  </action>
+  <action id="QuickJavaDoc">
+    <keyboard-shortcut first-keystroke="f1" />
+    <mouse-shortcut keystroke="control button2" />
+  </action>
+  <action id="Scala.ExpandImplicits">
+    <keyboard-shortcut first-keystroke="shift ctrl alt minus" />
+    <keyboard-shortcut first-keystroke="shift ctrl alt subtract" />
+  </action>
+  <action id="Scala.ShowImplicits">
+    <keyboard-shortcut first-keystroke="shift ctrl alt equals" />
+    <keyboard-shortcut first-keystroke="shift ctrl alt add" />
+  </action>
+  <action id="SelectInProjectView">
+    <keyboard-shortcut first-keystroke="ctrl y" />
+    <keyboard-shortcut first-keystroke="ctrl n" />
+  </action>
+  <action id="ServiceView.GroupByServiceGroups" />
+  <action id="Table-selectPreviousColumnExtendSelection" />
+  <action id="TodoViewGroupByShowModules" />
+  <action id="TodoViewGroupByShowPackages" />
+  <action id="Tree-selectParentExtendSelection" />
+  <action id="TypeHierarchy" />
+  <action id="TypeHierarchyBase.BaseOnThisType" />
+  <action id="Vcs.ShowMessageHistory">
+    <keyboard-shortcut first-keystroke="meta e" />
+  </action>
+  <action id="Wix.SearchVmrSymbols" />
+</keymap>
