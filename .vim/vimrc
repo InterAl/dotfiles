@@ -195,7 +195,6 @@ function! ToggleSyntax()
     endif
 endfunction
 
-"useful remappings
 command! W w
 command! Q q
 command! Q quit<bang>
@@ -374,5 +373,19 @@ function! s:show_documentation()
   endif
 endfunction
 
+let g:coc_filetype_map = {
+  \ 'typescript.javascript': 'typescript',
+  \ 'typescript.javascript.jsx': 'typescript'
+  \ }
+let g:coc_global_extensions = [
+            \ 'coc-json',
+            \ 'coc-tsserver',
+            \ 'coc-html',
+            \ 'coc-css',
+            \ 'coc-ultisnips'
+            \ ]
+
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
+nnoremap <leader>cf :CocFix<CR>
+nmap <leader>oi :call CocAction('runCommand', 'tsserver.organizeImports')<CR>
