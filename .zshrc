@@ -9,6 +9,10 @@ function zle-line-init zle-keymap-select {
 # prompt_color="\$reset_color"
 zle -N zle-line-init
 zle -N zle-keymap-select
+# Allow command line editing in an external editor.
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line # ESC-v to edit in an external editor.
 bindkey -v
 # http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html
 bindkey '^R' history-incremental-search-backward
@@ -113,7 +117,11 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 
 export GOPATH="/Users/alonn/go"
 export BC_ENV_ARGS="-q $HOME/.bc"
+source '/Users/alonn/projects/z/z.sh'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="$PATH:$HOME/.local/bin"
+
+source "$HOME/.bazelenv"
