@@ -216,6 +216,12 @@ nmap <C-l> <C-W>l:redraw!<CR>
 nmap <C-j> <C-W>j
 nmap <C-k> <C-W>k
 
+"insert mode emacs-like
+inoremap <C-A> <Home>
+inoremap <C-B> <Left>
+inoremap <C-E> <End>
+inoremap <C-F> <Right>
+
 "scrolls a full page - by default vim scrolls a full page - 2
 nmap <PageDown> <S-Down><C-E><C-E>H
 nmap <PageUp> <S-Up><C-Y><C-Y>H
