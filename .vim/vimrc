@@ -295,6 +295,7 @@ let g:ale_linters = {
 \   'javascript': ['eslint']
 \}
 
+nnoremap <leader>fi :ALEFix<CR>
 let g:ale_sign_error = '>'
 
 let g:ale_lint_on_text_changed = 'never'
@@ -339,6 +340,9 @@ let g:indexed_search_n_always_searches_forward = 0
 " nmap <silent> gd <Plug>(coc-definition)
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -354,9 +358,6 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
-" Use <c-p> to trigger completion.
-inoremap <silent><expr> <c-p> coc#refresh()
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
@@ -388,10 +389,14 @@ let g:coc_global_extensions = [
             \ 'coc-tsserver',
             \ 'coc-html',
             \ 'coc-css',
-            \ 'coc-ultisnips'
+            \ 'coc-ultisnips',
+            \ 'coc-prettier'
             \ ]
 
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
 nnoremap <leader>cf :CocFix<CR>
 nmap <leader>oi :call CocAction('runCommand', 'tsserver.organizeImports')<CR>
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+
+"imap <silent><expr> <C-i> "\<TAB>"
