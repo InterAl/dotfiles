@@ -1,4 +1,10 @@
 <keymap version="1" name="macOS copy" parent="Mac OS X 10.5+">
+  <action id="Blaze.EditProjectView">
+    <keyboard-shortcut first-keystroke="ctrl meta v" />
+  </action>
+  <action id="Blaze.IncrementalSyncProject">
+    <keyboard-shortcut first-keystroke="ctrl meta b" />
+  </action>
   <action id="ChangesView.GroupBy.Directory" />
   <action id="ChangesView.GroupBy.Module" />
   <action id="ChangesView.ShelveSilently" />
@@ -41,6 +47,7 @@
     <keyboard-shortcut first-keystroke="f1" />
     <mouse-shortcut keystroke="control button2" />
   </action>
+  <action id="Images.Editor.ToggleGrid" />
   <action id="Macro.resize-editor-left">
     <keyboard-shortcut first-keystroke="shift meta h" />
   </action>
@@ -56,9 +63,21 @@
   <action id="PopupMenu-return">
     <keyboard-shortcut first-keystroke="enter" />
   </action>
+  <action id="Profiler.ExcludeCallAction">
+    <keyboard-shortcut first-keystroke="shift ctrl meta y" />
+  </action>
+  <action id="Profiler.ExcludeSubTreeAction">
+    <keyboard-shortcut first-keystroke="shift meta x" />
+  </action>
+  <action id="ProjectView.ShowExcludedFiles">
+    <keyboard-shortcut first-keystroke="shift ctrl meta x" />
+  </action>
   <action id="QuickJavaDoc">
     <keyboard-shortcut first-keystroke="f1" />
     <mouse-shortcut keystroke="control button2" />
+  </action>
+  <action id="Resume">
+    <keyboard-shortcut first-keystroke="meta back_slash" />
   </action>
   <action id="Scala.ExpandImplicits">
     <keyboard-shortcut first-keystroke="shift ctrl alt minus" />
@@ -73,6 +92,17 @@
     <keyboard-shortcut first-keystroke="ctrl n" />
   </action>
   <action id="ServiceView.GroupByServiceGroups" />
+  <action id="ShowProjectStructureSettings" />
+  <action id="ShowRecentTests" />
+  <action id="StepInto">
+    <keyboard-shortcut first-keystroke="meta semicolon" />
+  </action>
+  <action id="StepOut">
+    <keyboard-shortcut first-keystroke="shift meta semicolon" />
+  </action>
+  <action id="StepOver">
+    <keyboard-shortcut first-keystroke="meta quote" />
+  </action>
   <action id="Table-selectPreviousColumnExtendSelection" />
   <action id="TodoViewGroupByShowModules" />
   <action id="TodoViewGroupByShowPackages" />
