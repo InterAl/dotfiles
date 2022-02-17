@@ -48,6 +48,7 @@ alias stashandpush="g stash && gpull && gpush && g stash pop"
 alias iphone="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 alias resetsound="sudo killall coreaudiod"
 alias vim_clean="vim -u NONE -c 'set nocompatible'"
+alias ter="pkill -9 -fil"
 stty -echoctl #prevent echoing ^C-c to terminal
 stty -ixon #allow c-s to forward-search in terminal
 #bind -x '"\C-\e41": clear;'
@@ -70,7 +71,7 @@ alias jtw="./node_modules/jest-cli/bin/jest.js --watch "
 alias yoshitest="./node_modules/mocha/bin/mocha --watch-extensions ts,tsx --watch --recursive --require ~/projects/yoshi/node_modules/yoshi/config/test-setup.js"
 alias santatest="node $NODE_DEBUG_OPTION --max_old_space_size=4096 js/test/jasmine.js --group packages "
 alias npmpublic="npm config set registry https://registry.npmjs.org/"
-alias npmprivate="npm config set registry http://repo.dev.wix/artifactory/api/npm/npm-repos"
+alias npmprivate="npm config set registry https://npm.dev.wixpress.com && npm config get registry && yarn config set registry https://npm.dev.wixpress.com"
 alias yarnpublic="yarn config set registry https://registry.npmjs.org/"
 alias yarnprivate="yarn config set registry http://repo.dev.wix/artifactory/api/npm/npm-repos"
 alias npmplease="nvm use && rm -rf node_modules/ && rm -f package-lock.json && npm install"
@@ -86,6 +87,12 @@ alias morfix=morfixweb
 alias m=morfix
 alias eclimd="~/eclipse/java-photon/Eclipse.app/Contents/Eclipse/eclimd"
 alias mvndeps="mvn dependency:tree -Doutput=deps"
+alias notification=displayNotification
+alias notify="displayNotification 'done'"
+
+displayNotification() {
+    osascript -e "display notification \"${1}\""
+}
 
 convertHeb2utf8() {
     iconv -f iso-8859-8 -t utf-8 ${1} > ${2}
