@@ -27,3 +27,5 @@ command! Wq wq<bang>
 command! WQ wq<bang>
 
 nmap <leader>r :source ~/.ideavim<CR>
+nmap <leader>v :e ~/.ideavim<CR>
+nmap <leader>g :NERDTreeFocus<CR>

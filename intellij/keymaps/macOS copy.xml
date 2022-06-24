@@ -10,6 +10,10 @@
   <action id="ChangesView.GroupBy.Module" />
   <action id="ChangesView.ShelveSilently" />
   <action id="CodeCompletion" />
+  <action id="CollapseTreeNode">
+    <keyboard-shortcut first-keystroke="subtract" />
+    <keyboard-shortcut first-keystroke="shift h" />
+  </action>
   <action id="Console.TableResult.ColumnVisibility" />
   <action id="DecrementWindowHeight">
     <keyboard-shortcut first-keystroke="shift meta up" />
@@ -41,6 +45,7 @@
   <action id="ExportToTextFile" />
   <action id="FullyExpandTreeNode">
     <keyboard-shortcut first-keystroke="ctrl o" />
+    <keyboard-shortcut first-keystroke="shift l" />
   </action>
   <action id="GotoBookmark8" />
   <action id="GuiDesigner.CreateListener" />
@@ -104,7 +109,6 @@
   <action id="SelectInProjectView">
     <keyboard-shortcut first-keystroke="ctrl y" />
     <keyboard-shortcut first-keystroke="ctrl n" />
-    <keyboard-shortcut first-keystroke="space" second-keystroke="g" />
   </action>
   <action id="ServiceView.GroupByServiceGroups" />
   <action id="ShowProjectStructureSettings" />
