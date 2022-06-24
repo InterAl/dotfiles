@@ -1,10 +1,9 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.fzf
 call plug#begin('~/.vim/plugged')
 Plug 'pbogut/fzf-mru.vim'
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
@@ -37,6 +36,7 @@ Plug 'majutsushi/tagbar'
 Plug 'ton/vim-bufsurf'
 Plug 'junegunn/goyo.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'machakann/vim-highlightedyank'
 " Plug 'eclim'
 " Plug 'autozimu/LanguageClient-neovim', {
 "     \ 'branch': 'next',
@@ -263,7 +263,7 @@ call system('touch ' . fzf_history_file)
 execute 'nmap <C-n> :let $FZF_DEFAULT_COMMAND = ''find . -type f -o -path "*/node_modules" -prune -o -path "*/.git" -prune -o -path "*/dist" -prune''<cr>:FZF --reverse --history ' . fzf_history_file . '<cr>'
 execute 'nmap <C-t> :let $FZF_DEFAULT_COMMAND = ''find . -type f -o -path "*/.git" -prune''<cr>:FZF --reverse --history ' . fzf_history_file . '<cr>'
 execute 'nmap <C-p> :FZFMru --reverse --history ' . fzf_history_file . '<cr>'
-" execute 'nmap <C-p> :History --reverse --history <cr>'
+execute 'nmap <C-p> :History --reverse --history <cr>'
 
 "nerd-tree-tabs
 let NERDTreeIgnore=['node_modules']
