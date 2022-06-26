@@ -4,8 +4,8 @@ Plug 'tpope/vim-commentary'
 Plug 'machakann/vim-highlightedyank'
 
 set visualbell
-#set noerrorbells
-#set rnu
+set noerrorbells
+set rnu
 
 let mapleader=" "
 map <S-y> "*y
@@ -29,3 +29,6 @@ command! WQ wq<bang>
 nmap <leader>r :source ~/.ideavim<CR>
 nmap <leader>v :e ~/.ideavim<CR>
 nmap <leader>g :NERDTreeFocus<CR>
+
+nnoremap g; :action JumpToLastChange<Enter>
+nnoremap g, :action JumpToNextChange<Enter>

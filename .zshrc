@@ -125,7 +125,7 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 
 export GOPATH="/Users/alonn/go"
 export BC_ENV_ARGS="-q $HOME/.bc"
-source '/Users/alonn/projects/z/z.sh'
+source '/Users/alonn/z/z.sh'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
