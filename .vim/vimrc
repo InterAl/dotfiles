@@ -132,6 +132,9 @@ set ignorecase
 set smartcase
 set wrapscan
 
+"registers
+xnoremap("<leader>p", "\"_dP")
+
 "tags
 set tags=tags;/
 "update tags
