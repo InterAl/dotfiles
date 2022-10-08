@@ -23,7 +23,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'bkad/CamelCaseMotion'
 Plug 'altercation/vim-colors-solarized'
 Plug 'google/vim-searchindex'
-" Plug 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-repeat'
 Plug 'ap/vim-buftabline'
@@ -37,6 +37,8 @@ Plug 'ton/vim-bufsurf'
 Plug 'junegunn/goyo.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'machakann/vim-highlightedyank'
+Plug 'jreybert/vimagit'
+" Plug 'hotoo/jsgf.vim'
 " Plug 'eclim'
 " Plug 'autozimu/LanguageClient-neovim', {
 "     \ 'branch': 'next',
@@ -121,8 +123,8 @@ augroup END
 "tabs
 set autoindent
 set smartindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 "search
@@ -151,7 +153,7 @@ map <ScrollWheelDown> <C-E>
 "buffers
 set hidden
 nmap <leader>T :enew<cr>
-nmap <leader>q :Sayonara!<cr>
+nmap <leader>q :Sayonara! bn<cr>
 nmap <leader>n :cn<CR>
 nmap <leader>b :cp<CR>
 nmap <leader>t :NERDTreeTabsToggle<CR>
@@ -266,7 +268,8 @@ call system('touch ' . fzf_history_file)
 execute 'nmap <C-n> :let $FZF_DEFAULT_COMMAND = ''find . -type f -o -path "*/node_modules" -prune -o -path "*/.git" -prune -o -path "*/dist" -prune''<cr>:FZF --reverse --history ' . fzf_history_file . '<cr>'
 execute 'nmap <C-t> :let $FZF_DEFAULT_COMMAND = ''find . -type f -o -path "*/.git" -prune''<cr>:FZF --reverse --history ' . fzf_history_file . '<cr>'
 execute 'nmap <C-p> :FZFMru --reverse --history ' . fzf_history_file . '<cr>'
-execute 'nmap <C-p> :History --reverse --history <cr>'
+execute 'nmap <C-p> :History <cr>'
+let g:fzf_preview_window = []
 
 "nerd-tree-tabs
 let NERDTreeIgnore=['node_modules']
@@ -346,10 +349,10 @@ let g:indexed_search_n_always_searches_forward = 0
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+inoremap <expr> <TAB>
+      \ pumvisible() ? "\<C-n>" : coc#refresh()
+      " \ <SID>check_back_space() ? "\<TAB>" :
+      " \ coc#refresh()
 inoremap <silent><expr> <C-j>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -371,6 +374,7 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>""
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <leader>cc :CocList diagnostics<Cr>
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -385,7 +389,8 @@ endfunction
 
 let g:coc_filetype_map = {
   \ 'typescript.javascript': 'typescript',
-  \ 'typescript.javascript.jsx': 'typescript'
+  \ 'typescript.javascript.jsx': 'typescript.tsx',
+  \ 'typescript.javascript.jsx.tsx': 'typescript.tsx'
   \ }
 let g:coc_global_extensions = [
             \ 'coc-json',
@@ -398,7 +403,7 @@ let g:coc_global_extensions = [
 
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
-nnoremap <leader>cf :CocFix<CR>
+nnoremap <leader>cf <Plug>(coc-codeaction-line)
 nmap <leader>oi :call CocAction('runCommand', 'tsserver.organizeImports')<CR>
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 
