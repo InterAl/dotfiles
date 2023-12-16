@@ -1,3 +1,7 @@
 {
-    "coc.preferences.useQuickfixForLocations": true
+    "coc.preferences.useQuickfixForLocations": true,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+    "typescript.updateImportsOnFileMove.enable": true,
+    "javascript.updateImportsOnFileMove.enable": true
 }
