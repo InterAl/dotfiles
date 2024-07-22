@@ -45,6 +45,7 @@ alias sourcebash="source ~/.bash_profile"
 alias vgl="git log --graph --pretty=format:'%h - %d %s (%cr) <%an>' | vim -R -c 'set filetype=git nowrap' -"
 alias glp="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset'"
 alias stashandpush="g stash && gpull && gpush && g stash pop"
+alias stashpull="g stash && gco master && gpull && g stash pop"
 alias iphone="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 alias resetsound="sudo killall coreaudiod"
 alias vim_clean="vim -u NONE -c 'set nocompatible'"
@@ -108,6 +109,7 @@ alias printcolors="for i in {0..255}; do   printf \"\x1b[38;5;${i}mcolour${i}\x1
 export NVM_DIR="/Users/alonn/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+
 # PATH
 export ANDROID_HOME=/usr/local/opt/android-sdk
 PATH="~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:${PATH}"
@@ -131,5 +133,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/Downloads/google-cloud-sdk/bin"
 
 source "$HOME/.bazelenv"
+export SSLKEYLOGFILE=~/.ssl-key.log

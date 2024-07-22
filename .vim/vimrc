@@ -38,6 +38,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'machakann/vim-highlightedyank'
 Plug 'jreybert/vimagit'
+Plug 'github/copilot.vim'
 " Plug 'hotoo/jsgf.vim'
 " Plug 'eclim'
 " Plug 'autozimu/LanguageClient-neovim', {
@@ -408,3 +409,10 @@ nmap <leader>oi :call CocAction('runCommand', 'tsserver.organizeImports')<CR>
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 
 "imap <silent><expr> <C-i> "\<TAB>"
+
+"copilot
+imap <C-L> <Plug>(copilot-accept-word)
+imap <C-0> <Plug>(copilot-next)
+imap <C-9> <Plug>(copilot-previous)
+imap <C-s> <Plug>(copilot-suggest)
+nmap <leader>cpp :Copilot panel<CR>

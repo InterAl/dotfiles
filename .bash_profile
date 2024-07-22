@@ -112,3 +112,4 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 
 export GOPATH="/Users/alonn/go"
 export BC_ENV_ARGS="-q $HOME/.bc"
+export PATH="/Users/alonn/Downloads/protodep:$PATH"

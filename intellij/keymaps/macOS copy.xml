@@ -1,30 +1,79 @@
 <keymap version="1" name="macOS copy" parent="Mac OS X 10.5+">
+  <action id="ActivateBazelProblemsToolWindow">
+    <keyboard-shortcut first-keystroke="meta close_bracket" />
+  </action>
+  <action id="ActivateWixBazelConsoleToolWindow">
+    <keyboard-shortcut first-keystroke="meta open_bracket" />
+  </action>
+  <action id="Adtui.ZoomInAction">
+    <keyboard-shortcut first-keystroke="meta add" />
+  </action>
+  <action id="Adtui.ZoomOutAction">
+    <keyboard-shortcut first-keystroke="meta subtract" />
+  </action>
   <action id="Android.Designer.AssignStartDestination" />
+  <action id="Back">
+    <keyboard-shortcut first-keystroke="meta alt left" />
+    <mouse-shortcut keystroke="button4" />
+  </action>
   <action id="Blaze.EditProjectView">
     <keyboard-shortcut first-keystroke="ctrl meta v" />
   </action>
   <action id="Blaze.IncrementalSyncProject">
     <keyboard-shortcut first-keystroke="ctrl meta b" />
   </action>
+  <action id="Blaze.NewPackageAction">
+    <keyboard-shortcut first-keystroke="shift meta equals" />
+  </action>
   <action id="ChangesView.GroupBy.Directory" />
   <action id="ChangesView.GroupBy.Module" />
   <action id="ChangesView.ShelveSilently" />
-  <action id="CodeCompletion" />
+  <action id="CodeCompletion">
+    <keyboard-shortcut first-keystroke="ctrl p" />
+  </action>
+  <action id="CollapseAll">
+    <keyboard-shortcut first-keystroke="meta subtract" />
+  </action>
+  <action id="CollapseAllRegions">
+    <keyboard-shortcut first-keystroke="shift meta subtract" />
+  </action>
+  <action id="CollapseExpandableComponent">
+    <keyboard-shortcut first-keystroke="shift enter" />
+    <keyboard-shortcut first-keystroke="meta subtract" />
+  </action>
+  <action id="CollapseRegion">
+    <keyboard-shortcut first-keystroke="meta subtract" />
+  </action>
   <action id="CollapseTreeNode">
     <keyboard-shortcut first-keystroke="subtract" />
     <keyboard-shortcut first-keystroke="shift h" />
   </action>
+  <action id="Console.Execute.Multiline" />
+  <action id="Console.SplitLine" />
   <action id="Console.TableResult.ColumnVisibility" />
+  <action id="CopyAsRichText">
+    <keyboard-shortcut first-keystroke="meta f10" />
+  </action>
+  <action id="DSM.ZoomIn">
+    <keyboard-shortcut first-keystroke="meta add" />
+  </action>
   <action id="DecrementWindowHeight">
     <keyboard-shortcut first-keystroke="shift meta up" />
   </action>
+  <action id="DirDiffMenu.SynchronizeDiff.All" />
   <action id="EditorChooseLookupItem">
     <keyboard-shortcut first-keystroke="enter" />
     <keyboard-shortcut first-keystroke="ctrl m" />
   </action>
   <action id="EditorCutLineEnd" />
+  <action id="EditorDecreaseFontSize">
+    <keyboard-shortcut first-keystroke="meta minus" />
+  </action>
   <action id="EditorDown">
     <keyboard-shortcut first-keystroke="ctrl j" />
+  </action>
+  <action id="EditorIncreaseFontSize">
+    <keyboard-shortcut first-keystroke="meta equals" />
   </action>
   <action id="EditorLeft">
     <keyboard-shortcut first-keystroke="left" />
@@ -38,11 +87,35 @@
     <keyboard-shortcut first-keystroke="ctrl f" />
     <keyboard-shortcut first-keystroke="ctrl l" />
   </action>
+  <action id="EditorSplitLine" />
   <action id="EditorUp">
     <keyboard-shortcut first-keystroke="up" />
     <keyboard-shortcut first-keystroke="ctrl k" />
   </action>
+  <action id="ExpandAll">
+    <keyboard-shortcut first-keystroke="meta add" />
+  </action>
+  <action id="ExpandAllRegions">
+    <keyboard-shortcut first-keystroke="shift meta add" />
+  </action>
+  <action id="ExpandExpandableComponent">
+    <keyboard-shortcut first-keystroke="shift enter" />
+    <keyboard-shortcut first-keystroke="meta add" />
+  </action>
+  <action id="ExpandRegion">
+    <keyboard-shortcut first-keystroke="meta add" />
+  </action>
   <action id="ExportToTextFile" />
+  <action id="ExternalSystem.CollapseAll">
+    <keyboard-shortcut first-keystroke="meta subtract" />
+  </action>
+  <action id="ExternalSystem.ExpandAll">
+    <keyboard-shortcut first-keystroke="meta add" />
+  </action>
+  <action id="Forward">
+    <keyboard-shortcut first-keystroke="meta alt right" />
+    <mouse-shortcut keystroke="button5" />
+  </action>
   <action id="FullyExpandTreeNode">
     <keyboard-shortcut first-keystroke="ctrl o" />
     <keyboard-shortcut first-keystroke="shift l" />
@@ -54,9 +127,16 @@
     <mouse-shortcut keystroke="control button2" />
   </action>
   <action id="Images.Editor.ToggleGrid" />
+  <action id="Images.Editor.ZoomIn">
+    <keyboard-shortcut first-keystroke="meta add" />
+  </action>
+  <action id="Images.Editor.ZoomOut">
+    <keyboard-shortcut first-keystroke="meta subtract" />
+  </action>
   <action id="IncrementWindowHeight">
     <keyboard-shortcut first-keystroke="shift meta down" />
   </action>
+  <action id="KotlinShellExecute" />
   <action id="Macro.resize-down">
     <keyboard-shortcut first-keystroke="shift meta j" />
   </action>
@@ -68,6 +148,12 @@
   </action>
   <action id="Macro.resize-up">
     <keyboard-shortcut first-keystroke="shift meta k" />
+  </action>
+  <action id="Maven.CollapseAll">
+    <keyboard-shortcut first-keystroke="meta subtract" />
+  </action>
+  <action id="Maven.ExpandAll">
+    <keyboard-shortcut first-keystroke="meta add" />
   </action>
   <action id="MethodHierarchy" />
   <action id="MethodHierarchy.OverrideMethodAction" />
@@ -92,19 +178,24 @@
     <mouse-shortcut keystroke="control button2" />
   </action>
   <action id="QuickPreview" />
+  <action id="RerunTests">
+    <keyboard-shortcut first-keystroke="f8" />
+  </action>
   <action id="ResetColumnsWidth">
     <keyboard-shortcut first-keystroke="shift meta up" />
   </action>
   <action id="Resume">
     <keyboard-shortcut first-keystroke="meta back_slash" />
   </action>
-  <action id="Scala.ExpandImplicits">
-    <keyboard-shortcut first-keystroke="shift ctrl alt minus" />
-    <keyboard-shortcut first-keystroke="shift ctrl alt subtract" />
+  <action id="Scala.NewClass">
+    <keyboard-shortcut first-keystroke="shift meta minus" />
   </action>
   <action id="Scala.ShowImplicits">
     <keyboard-shortcut first-keystroke="shift ctrl alt equals" />
     <keyboard-shortcut first-keystroke="shift ctrl alt add" />
+  </action>
+  <action id="ScalaConsole.Execute">
+    <keyboard-shortcut first-keystroke="enter" />
   </action>
   <action id="SelectInProjectView">
     <keyboard-shortcut first-keystroke="ctrl y" />
@@ -113,6 +204,7 @@
   <action id="ServiceView.GroupByServiceGroups" />
   <action id="ShowProjectStructureSettings" />
   <action id="ShowRecentTests" />
+  <action id="SplitChooser.Duplicate" />
   <action id="SplitChooser.SplitCenter" />
   <action id="StepInto">
     <keyboard-shortcut first-keystroke="meta semicolon" />
@@ -124,6 +216,7 @@
     <keyboard-shortcut first-keystroke="meta quote" />
   </action>
   <action id="Table-selectPreviousColumnExtendSelection" />
+  <action id="Terminal.SmartCommandExecution.Run" />
   <action id="TodoViewGroupByShowModules" />
   <action id="TodoViewGroupByShowPackages" />
   <action id="Tree-selectChild">
@@ -131,9 +224,7 @@
     <keyboard-shortcut first-keystroke="ctrl f" />
     <keyboard-shortcut first-keystroke="l" />
   </action>
-  <action id="Tree-selectFirst">
-    <keyboard-shortcut first-keystroke="ctrl p" />
-  </action>
+  <action id="Tree-selectFirst" />
   <action id="Tree-selectNext">
     <keyboard-shortcut first-keystroke="j" />
   </action>
@@ -146,12 +237,15 @@
   </action>
   <action id="TypeHierarchy" />
   <action id="TypeHierarchyBase.BaseOnThisType" />
+  <action id="UpdateRunningApplication" />
   <action id="UsageGrouping.Directory" />
   <action id="UsageGrouping.Package" />
   <action id="Vcs.Push" />
   <action id="Vcs.ShowMessageHistory">
     <keyboard-shortcut first-keystroke="meta e" />
   </action>
+  <action id="ViewSource" />
   <action id="Wix.SearchVmrFiles" />
   <action id="Wix.SearchVmrSymbols" />
+  <action id="copilot.disposeInlays" />
 </keymap>
