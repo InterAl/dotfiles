@@ -1,0 +1,9 @@
+{
+    "git.openRepositoryInParentFolders": "never",
+    "terminal.integrated.suggest.enabled": true,
+    "editor.cursorBlinking": "solid",
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "explorer.confirmDragAndDrop": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "explorer.confirmDelete": false
+}
