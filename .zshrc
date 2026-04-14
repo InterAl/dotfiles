@@ -137,3 +137,17 @@ export PATH="$PATH:$HOME/Downloads/google-cloud-sdk/bin"
 
 source "$HOME/.bazelenv"
 export SSLKEYLOGFILE=~/.ssl-key.log
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/alonn/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+export JAVA_HOME=`/usr/libexec/java_home -v 17`
+export ASTRA_OPENAI_API_KEY=UNDEFINED
+export ASTRA_AZURE_HOST=https://ero.wewix.net/proxy/azure-ai/openai/deployments/
+export ELASTIC_HOST=http://127.0.0.1:9200
+eval "$(fnm env --use-on-cd)"
+export PATH="/opt/homebrew/opt/scala@2.12/bin:$PATH"
+source "/Users/alonn/.astra/astra.sh"

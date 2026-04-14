@@ -113,3 +113,12 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 export GOPATH="/Users/alonn/go"
 export BC_ENV_ARGS="-q $HOME/.bc"
 export PATH="/Users/alonn/Downloads/protodep:$PATH"
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/alonn/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+# >>> coursier install directory >>>
+export PATH="$PATH:/Users/alonn/Library/Application Support/Coursier/bin"
+# <<< coursier install directory <<<
+. "$HOME/.cargo/env"

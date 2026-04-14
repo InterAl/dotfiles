@@ -31,7 +31,7 @@
         "when": "debugState == 'stopped'"
     },
     {
-        "key": "alt+cmd+down",
+        "key": "f4",
         "command": "search.action.focusNextSearchResult",
         "when": "hasSearchResult || inSearchEditor"
     },
@@ -111,5 +111,15 @@
         "key": "ctrl+k",
         "command": "workbench.action.quickOpenSelectPrevious",
         "when": "inQuickOpen"
+    },
+    {
+        "key": "alt+f7",
+        "command": "references-view.findReferences",
+        "when": "editorHasReferenceProvider"
+    },
+    {
+        "key": "shift+alt+f12",
+        "command": "-references-view.findReferences",
+        "when": "editorHasReferenceProvider"
     }
 ]

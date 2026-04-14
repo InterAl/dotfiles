@@ -5,5 +5,7 @@
     "github.copilot.nextEditSuggestions.enabled": true,
     "explorer.confirmDragAndDrop": false,
     "security.workspace.trust.untrustedFiles": "open",
-    "explorer.confirmDelete": false
+    "explorer.confirmDelete": false,
+    "editor.lineNumbers": "relative",
+    "debug.inlineValues": "on"
 }

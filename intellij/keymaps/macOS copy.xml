@@ -48,6 +48,7 @@
     <keyboard-shortcut first-keystroke="subtract" />
     <keyboard-shortcut first-keystroke="shift h" />
   </action>
+  <action id="CollapsiblePanel-toggle" />
   <action id="Console.Execute.Multiline" />
   <action id="Console.SplitLine" />
   <action id="Console.TableResult.ColumnVisibility" />
@@ -112,6 +113,9 @@
   <action id="ExternalSystem.ExpandAll">
     <keyboard-shortcut first-keystroke="meta add" />
   </action>
+  <action id="FileChooser.LightEditGotoOpenedFile">
+    <keyboard-shortcut first-keystroke="shift meta 1" />
+  </action>
   <action id="Forward">
     <keyboard-shortcut first-keystroke="meta alt right" />
     <mouse-shortcut keystroke="button5" />
@@ -120,6 +124,7 @@
     <keyboard-shortcut first-keystroke="ctrl o" />
     <keyboard-shortcut first-keystroke="shift l" />
   </action>
+  <action id="GotoBookmark0" />
   <action id="GotoBookmark8" />
   <action id="GuiDesigner.CreateListener" />
   <action id="GuiDesigner.QuickJavadoc">
@@ -142,9 +147,6 @@
   </action>
   <action id="Macro.resize-editor-left">
     <keyboard-shortcut first-keystroke="shift meta h" />
-  </action>
-  <action id="Macro.resize-editor-right">
-    <keyboard-shortcut first-keystroke="shift meta l" />
   </action>
   <action id="Macro.resize-up">
     <keyboard-shortcut first-keystroke="shift meta k" />
@@ -200,6 +202,7 @@
   <action id="SelectInProjectView">
     <keyboard-shortcut first-keystroke="ctrl y" />
     <keyboard-shortcut first-keystroke="ctrl n" />
+    <keyboard-shortcut first-keystroke="ctrl 0" />
   </action>
   <action id="ServiceView.GroupByServiceGroups" />
   <action id="ShowProjectStructureSettings" />
@@ -247,5 +250,11 @@
   <action id="ViewSource" />
   <action id="Wix.SearchVmrFiles" />
   <action id="Wix.SearchVmrSymbols" />
+  <action id="copilot.disableCopilot">
+    <keyboard-shortcut first-keystroke="shift meta l" />
+  </action>
   <action id="copilot.disposeInlays" />
+  <action id="copilot.enableCopilot">
+    <keyboard-shortcut first-keystroke="shift meta k" />
+  </action>
 </keymap>
