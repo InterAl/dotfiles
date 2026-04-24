@@ -1,6 +1,8 @@
 set -o vi
-shopt -s globstar
-PS1="\w$ "
+# `shopt` exists only in bash; zsh supports `**` natively.
+if [ -n "$BASH_VERSION" ]; then
+    shopt -s globstar
+fi
 alias ll="ls -lah"
 alias v="vim"
 alias g="git"
@@ -16,17 +18,22 @@ alias gd="git diff"
 alias gdi="git diff --cached"
 alias gpush="git push origin head"
 alias gpull="git pull --rebase"
-alias runmocha="mocha --watch --require spec/setup.js"
 alias sourcebash="source ~/.bash_profile"
 alias vgl="git log --graph --pretty=format:'%h - %d %s (%cr) <%an>' | vim -R -c 'set filetype=git nowrap' -"
 alias glp="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset'"
 alias stashandpush="g stash && gpull && gpush && g stash pop"
-alias iphone="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 alias resetsound="sudo killall coreaudiod"
 alias vim_clean="vim -u NONE -c 'set nocompatible'"
-stty -echoctl #prevent echoing ^C-c to terminal
-stty -ixon #allow c-s to forward-search in terminal
-bind -x '"\C-\e41": clear;'
+if [ -t 0 ]; then
+    stty -echoctl # prevent echoing ^C-c to terminal
+    stty -ixon # allow c-s to forward-search in terminal
+fi
+if [ -n "$BASH_VERSION" ]; then
+    bind -x '"\C-\e41": clear;'
+elif [ -n "$ZSH_VERSION" ]; then
+    # zsh equivalent: Ctrl-Shift-A clears the terminal.
+    bindkey -s '^[[1;6A' 'clear\n'
+fi
 
 getNpmVersion() {
     npm view $1 version
@@ -41,34 +48,11 @@ killPort() {
 }
 alias killport=killPort
 
-alias ntw="npm run test:watchSingle "
-alias jtw="./node_modules/jest-cli/bin/jest.js --watch "
-alias yoshitest="./node_modules/mocha/bin/mocha --watch-extensions ts,tsx --watch --recursive --require ~/projects/yoshi/node_modules/yoshi/config/test-setup.js"
-alias santatest="node $NODE_DEBUG_OPTION --max_old_space_size=4096 js/test/jasmine.js --group packages "
-alias npmpublic="npm config set registry https://registry.npmjs.org/"
-alias npmprivate="npm config set registry https://npm.dev.wixpress.com && npm config get registry"
-alias yarnpublic="yarn config set registry https://registry.npmjs.org/"
-alias yarnprivate="yarn config set registry http://repo.dev.wix/artifactory/api/npm/npm-repos"
 alias npmplease="nvm use && rm -rf node_modules/ && rm -f package-lock.json && npm install"
 alias npmpleasenonvm="rm -rf node_modules/ && rm -f package-lock.json && npm install"
 alias ranger='ranger --choosedir=$HOME/rangerdir; LASTDIR=`cat $HOME/rangerdir`; cd "$LASTDIR"'
 alias r="ranger"
 alias vi="vim"
-alias btc="curl 'https://www.bitstamp.net/' -H 'Accept-Language: \
-en-US,en;q=0.9,he;q=0.8' -H 'Upgrade-Insecure-Requests: 1' -H 'User-Agent: \
-Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like \
-Gecko) Chrome/63.0.3239.132 Safari/537.36' -H 'Accept: \
-text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8' \
--H 'Cookie: \
-visid_incap_99025=qtuDHy9URa+cWMIqoJiRsKF+ZFoAAAAAQUIPAAAAAAB4LzPPURh/UtUZ/tQedbrq; \
-csrftoken=jkSlVTzBDgjMcd7XuihjGu6RTaq3Bboq; \
-nlbi_99025=PpGuMR4ywDM+5Qwz8F1n9AAAAAChyjHdplEf43uIgd1vNI9d; __utmc=209907974; \
-incap_ses_729_99025=sp2aRwP6ww1vA+u+5u0dCiIlZloAAAAARc10XyqAby+IEomlNReVXQ==; \
-incap_ses_253_99025=7k/KF7OfxTAFROdRHdeCA9BZaFoAAAAAgdmlJh6pIXe26LWKJk4dKg==; \
-__utmt=1; __utma=209907974.2021309398.1516535602.1516788326.1516788348.25; \
-__utmz=209907974.1516788348.25.2.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); \
-__utmb=209907974.1.10.1516788348' -H 'Connection: keep-alive' -s | less | grep \
-\"<title>\" | sed 's/		<title>(\(.*\)).*<\/title>/\1/g'"
 alias youtube="mpsyt"
 alias openfiles=~/dotfiles/scripts/openfiles.sh
 alias morfixweb=~/dotfiles/scripts/morfix.sh
@@ -84,7 +68,7 @@ convertHeb2utf8() {
 alias heb2utf=convertHeb2utf8
 
 . ~/.bash_profile_secrets
-. ~/dotfiles/z/z.sh
+[ -f ~/dotfiles/z/z.sh ] && . ~/dotfiles/z/z.sh
 
 alias printcolors="for i in {0..255}; do   printf \"\x1b[38;5;${i}mcolour${i}\x1b[0m\n\"; done"
 
@@ -121,4 +105,4 @@ export PATH="/Users/alonn/.rd/bin:$PATH"
 # >>> coursier install directory >>>
 export PATH="$PATH:/Users/alonn/Library/Application Support/Coursier/bin"
 # <<< coursier install directory <<<
-. "$HOME/.cargo/env"
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
