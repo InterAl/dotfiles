@@ -1,12 +1,13 @@
 set -o vi
 # `shopt` exists only in bash; zsh supports `**` natively.
 if [ -n "$BASH_VERSION" ]; then
-    shopt -s globstar
+    shopt -s globstar 2>/dev/null || true
 fi
 alias ll="ls -lah"
 alias v="vim"
 alias g="git"
 alias gs="git status -s"
+alias gsc="git diff --name-only --diff-filter=U"
 alias ga="git add ."
 alias gr="git reset"
 alias gst="git status"
@@ -22,8 +23,11 @@ alias sourcebash="source ~/.bash_profile"
 alias vgl="git log --graph --pretty=format:'%h - %d %s (%cr) <%an>' | vim -R -c 'set filetype=git nowrap' -"
 alias glp="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset'"
 alias stashandpush="g stash && gpull && gpush && g stash pop"
+alias stashpull="g stash && gco master && gpull && g stash pop"
+alias iphone="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 alias resetsound="sudo killall coreaudiod"
 alias vim_clean="vim -u NONE -c 'set nocompatible'"
+alias ter="pkill -9 -fil"
 if [ -t 0 ]; then
     stty -echoctl # prevent echoing ^C-c to terminal
     stty -ixon # allow c-s to forward-search in terminal
@@ -42,6 +46,8 @@ getNpmVersion() {
 alias npmver=getNpmVersion
 alias chromenosec="open -a Google\ Chrome --args --disable-web-security --allow-running-insecure-content --ignore-certificate-errors"
 alias chromenocert="open -a Google\ Chrome --args --ignore-certificate-errors"
+alias npmpublic="npm config set registry https://registry.npmjs.org/"
+alias yarnpublic="yarn config set registry https://registry.npmjs.org/"
 
 killPort() {
     lsof -i tcp:$1 | grep LISTEN | awk '{print $2}' | xargs kill -9
@@ -61,6 +67,12 @@ alias morfix=morfixweb
 alias m=morfix
 alias eclimd="~/eclipse/java-photon/Eclipse.app/Contents/Eclipse/eclimd"
 alias mvndeps="mvn dependency:tree -Doutput=deps"
+
+displayNotification() {
+    osascript -e "display notification \"${1}\""
+}
+alias notification=displayNotification
+alias notify="displayNotification 'done'"
 
 convertHeb2utf8() {
     iconv -f iso-8859-8 -t utf-8 ${1} > ${2}
